@@ -38,3 +38,8 @@ log() {
 	fi
 }
 
+log "Updating system"
+if [[ $dry_run == "0" ]]; then
+	sudo dnf update -y
+fi
+
