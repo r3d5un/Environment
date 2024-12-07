@@ -21,3 +21,15 @@ require_root() {
 		exit 1
 	fi
 }
+
+echo_banner() {
+	local message="$1"
+	local length="${#message}"
+
+	local border
+	border=$(printf '=%.0s' $(seq 1 "$length"))
+
+	echo "$border"
+	echo -e "$message"
+	echo "$border"
+}
