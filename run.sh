@@ -33,7 +33,7 @@ if [[ $dry_run == "0" ]]; then
 	sudo dnf update -y
 fi
 
-scripts=$(find $cwd/scripts -mindepth 1 -maxdepth 1 -executable)
+scripts=$(find $cwd/scripts -mindepth 1 -maxdepth 1 -executable | sort)
 for script in $scripts; do
 	log "INFO" "Running script: $script"
 
