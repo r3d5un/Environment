@@ -6,8 +6,9 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 cwd="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
-dry_run="0"
+source "$cwd/utils/utils.sh"
 
+dry_run="0"
 while [[ $# -gt 0 ]]; do
 	case "$1" in
 	--dry)
@@ -30,23 +31,14 @@ while [[ $# -gt 0 ]]; do
 	fi
 done
 
-log() {
-	if [[ $dry_run == "1" ]]; then
-		echo "[DRY_RUN]: $1"
-	else
-		echo "$1"
-	fi
-}
-
-log "Updating system"
+log "INFO" "Updating system"
 if [[ $dry_run == "0" ]]; then
 	sudo dnf update -y
 fi
 
 scripts=$(find $cwd/scripts -mindepth 1 -maxdepth 1 -executable)
-log "scripts: $scripts"
 for script in $scripts; do
-	log "running script: $script"
+	log "INFO" "Running script: $script"
 
 	if [[ $dry_run == "0" ]]; then
 		$script
