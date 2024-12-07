@@ -41,3 +41,5 @@ for script in $scripts; do
 		$script
 	fi
 done
+
+log "INFO" "Done"
