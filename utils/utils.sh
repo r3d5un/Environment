@@ -11,3 +11,13 @@ log() {
 		echo "[$timestamp] [$level] $message"
 	fi
 }
+
+# require_root checks if the script is running with root priveleges.
+# If root privileges are not found the function exits with code 1
+# and an error message
+require_root() {
+	if [[ $EUID -ne 0 ]]; then
+		log "ERROR" "This script requires root permissions. Use sudo."
+		exit 1
+	fi
+}

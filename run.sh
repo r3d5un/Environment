@@ -1,12 +1,9 @@
 #!/bin/bash
 
-if [[ $EUID -ne 0 ]]; then
-	echo "Error: root required, use 'sudo $0'." >&2
-	exit 1
-fi
-
 cwd="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 source "$cwd/utils/utils.sh"
+
+require_root
 
 dry_run="0"
 while [[ $# -gt 0 ]]; do
