@@ -16,7 +16,6 @@ sudo dnf install -y \
 	gcc \
 	gh \
 	htop \
-	kitty \
 	luarocks \
 	mangohud \
 	mpv \
