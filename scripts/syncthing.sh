@@ -10,5 +10,3 @@ require_root
 sudo dnf install syncthing -y
 
 sudo systemctl enable --now syncthing@r3d5un.service
-
-systemctl status syncthing@r3d5un.service
