@@ -9,7 +9,13 @@ echo_banner "JETBRAINS"
 
 require_root
 
-log "INFO" "Downloading JetBrains Toolbox"
-curl -L -o /tmp/jetbrains https://download.jetbrains.com/toolbox/jetbrains-toolbox-$version.35332.tar.gz
+file_path=/tmp/jetbrains.tar.gz
+if [ -e "$file_path" ]; then
+	log "INFO" "$file_path already exists"
+else
+	log "INFO" "Downloading JetBrains Toolbox"
+	curl -L -o $file_path https://download.jetbrains.com/toolbox/jetbrains-toolbox-$version.35332.tar.gz
+fi
 
-sudo rm -rf /opt/jetbrains && tar -C /opt -xzf /tmp/jetbrains
+log "INFO" "Installing JetBrains Toolbox"
+sudo rm -rf /opt/jetbrains && tar -C /opt -xzf $file_path
