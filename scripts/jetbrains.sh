@@ -19,3 +19,6 @@ fi
 
 log "INFO" "Installing JetBrains Toolbox"
 sudo rm -rf /opt/jetbrains && tar -C /opt -xzf $file_path
+
+log "INFO" "Stowing IdeaVim configuration"
+stow --verbose -d $cwd/../dotfiles -t /home/r3d5un/ ideavim

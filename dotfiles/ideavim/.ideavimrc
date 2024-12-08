@@ -1,0 +1,132 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+"" Set leader to space
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
+" Which-Key
+set which-key
+set notimeout
+
+let g:WhichKeyDesc_LeaderKey = "<leader> Leader"
+let g:WhichKeyDesc_GotoKey = "g Goto"
+
+"" Keymappings for moving between windows
+let g:WhichKeyDesc_MoveToWindowLeft = "<leader>wh Move To Left Window"
+nnoremap <leader>wh <C-w>h
+let g:WhichKeyDesc_MoveToWindowLeft = "<leader>wj Move To Down Window"
+nnoremap <leader>wj <C-w>j
+let g:WhichKeyDesc_MoveToWindowUp = "<leader>wj Move To Up Window"
+nnoremap <leader>wk <C-w>k
+let g:WhichKeyDesc_MoveToWindowRight = "<leader>wl Move To Right Window"
+nnoremap <leader>wl <C-w>l
+
+"" Splitting windows
+map <C-w>v <Action>(SplitVertically)
+map <leader>wv <Action>(SplitVertically)
+map <C-w>s <Action>(SplitHorizontally)
+map <leader>ws <Action>(SplitHorizontally)
+"" Unsplit
+map <leader>wu <Action>(Unsplit)
+map <C-w>u <Action>(Unsplit)
+"" Move Pane
+map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+map <C-w>m <Action>(MoveEditorToOppositeTabGroup)
+
+"" Keymappings for closing windows
+nnoremap <leader>wc <C-w>c
+nnoremap <leader>wd <C-w>c
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=10
+
+" Search
+set incsearch " Do Incremental Searching.
+set hlsearch " Highlight Search Terms
+
+"" Always Show Mode
+set showmode
+set showcmd
+
+"" Don't use Ex mode, use Q for formatting.
+nmap Q gq
+
+"" Use system clipboard
+set clipboard=unnamedplus
+
+"" Turn hybrid line numbers on
+set linenumber
+set number relativenumber
+set nu rnu
+
+"" Goto
+let g:WhichKeyDesc_Window = "<leader>w Window Options"
+let g:WhichKeyDesc_Goto = "<leader>g Goto"
+
+let g:WhichKeyDesc_GotoDefinition = "gd Goto Definition"
+nmap gd <Action>(GotoDefinition)
+let g:WhichKeyDesc_LeaderGotoDefinition = "<leader>gd Goto Definition"
+nmap <leader>gd <Action>(GotoDefinition)
+
+let g:WhichKeyDesc_GotoType = "gd Goto Type"
+nmap gt <Action>(GotoTypeDeclaration)
+let g:WhichKeyDesc_LeaderGotoType = "<leader>gd Goto Type"
+nmap <leader>gt <Action>(GotoTypeDeclaration)
+
+let g:WhichKeyDesc_GotoDeclaration = "gd Goto Declaration"
+nmap gd <Action>(GotoDeclaration)
+let g:WhichKeyDesc_LeaderGotoDeclaration = "<leader>gd Goto Declaration"
+nmap <leader>gd <Action>(GotoDeclaration)
+
+let g:WhichKeyDesc_GotoUsages = "gd Goto Usages"
+nmap gr <Action>(ShowUsages)
+let g:WhichKeyDesc_LeaderGotoUsages = "<leader>gd Goto Usages"
+nmap <leader>gr <Action>(ShowUsages)
+
+let g:WhichKeyDesc_GotoUsages = "<leader>gb Go Back"
+nmap <leader>gb <Action>(Back)
+let g:WhichKeyDesc_GotoUsages = "gb Go Back"
+nmap gb <Action>(Back)
+
+" Rename Element
+let g:WhichKeyDesc_GotoRenameElement = "<leader>rn Rename Element"
+map <leader>rn <Action>(RenameElement)
+
+" Zen Mode
+map <leader>wZ <Action>(ToggleDistractionFreeMode)
+map <leader>wz <Action>(ToggleZenMode)
+
+" Comments
+map gc <Action>(CommentByLineComment)
+
+" Tabs
+let g:WhichKeyDesc_NextTab = "<s-l> Next Tab"
+nmap <s-l> <Action>(NextTab)
+
+let g:WhichKeyDesc_PreviousTab = "<s-h> Previous Tab"
+nmap <s-h> <Action>(PreviousTab)
+
+" Project Search, File Navigation and File Search
+map <leader><leader> <Action>(RecentFiles)
+let g:WhichKeyDesc_RecentFiles = "<leader><leader> RecentFiles"
+"" Finding/Navigating Files
+map <leader>sf <action>(GotoFile)
+map <leader>sr <action>(RecentFiles)
+map <leader>sc <action>(FindInPath)
+map <leader>sl <action>(RecentLocations)
+map <leader>ss <action>(NewScratchFile)
+let g:WhichKeyDesc_Goto = "<leader>g Goto"
+
+" Pane
+map <leader>bx <action>(CloseContent)
