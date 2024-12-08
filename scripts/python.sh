@@ -3,7 +3,7 @@
 cwd="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 source "$cwd/../utils/utils.sh"
 
-echo_banner "Python"
+echo_banner "PYTHON"
 
 log "INFO" "Installing Python versions 3.10 through 3.12"
 sudo dnf install -y \
