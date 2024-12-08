@@ -1,0 +1,59 @@
+# News
+http://feeds.arstechnica.com/arstechnica/index "~ArsTechnica" "News"
+https://www.theguardian.com/world/rss "~The Guardian World News" "News"
+https://www.theguardian.com/business/economics/rss "~The Guardian Business" "News"
+http://feeds.bbci.co.uk/news/world/rss.xml "~BBC World News" "News"
+http://feeds.bbci.co.uk/news/technology/rss.xml "~BBC Technology News" "Technology" "News"
+https://www.axios.com/feeds/feed.rss "~Axios" "News"
+https://www.wired.com/feed/rss "~WIRED Latest" "News"
+https://www.wired.com/feed/category/science/latest/rss "~WIRED Science" "News" "Science"
+https://www.wired.com/feed/category/security/latest/rss "~WIRED Security" "News" "Security"
+https://www.wired.com/feed/category/business/latest/rss "~WIRED Business" "News" "Business"
+https://torrentfreak.com/feed/ "~Torrentfreak" "Torrents" "News" "Technology"
+https://gizmodo.com/rss "~Gizmondo" "News" "Technology"
+https://www.anandtech.com/rss/ "~AnandTech" "Technology" "News"
+https://www.thenation.com/feed/?post_type=article "~The Nation" "News" "Politics"
+
+# Norwegian News
+https://www.nrk.no/tromsogfinnmark/toppsaker.rss "~NRK Troms & Finnmark" "News"
+https://www.nrk.no/nyheter/siste.rss "~NRK Nyheter" "News"
+
+# YouTube Channels
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4w1YQAJMWOz4qtxinq55LQ "~YT: Level1Techs" "YouTube" "Technology"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCOWcZ6Wicl-1N34H0zZe38w "~YT: Level1Linux" "YouTube" "Technology"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCXuqSBlHAE6Xw-yeJA0Tunw "~YT: Linus Tech Tips" "YouTube" "Technology"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCX6b17PVsYBQ0ip5gyeme-Q "~YT: CrashCourse" "YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCphIm9gI_JbeI0ByZSRt5Mg "~YT: Whiskey Tribe" "Food & Drinks" "YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q "~YT: Kurzgesagt - In the Nutshell" "YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCWCw2Sd7RlYJ2yuNVHDWNOA "~YT: Jim Sterling" "YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUK0HBIBWgM2c4vsPhkYY4w "~YT: The Slow Mo Guys" "YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC42VsoDtra5hMiXZSsD6eGg "~YT: The Modern Rogue" "YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC6-ymYjG0SU0jUWnWh9ZzEQ "~YT: Wisecrack" "YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCGaVdbSav8xWuFWTadK6loA "~YT: vlogbrothers" "YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UClFSU9_bUb4Rc6OYfTt5SPw "~YT: Philip DeFranco" "YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCThY8lOKKkVDd9HVBT59zCg "~YT: Still It" "YouTube" "Food & Drinks"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCtwKon9qMt5YLVgQt1tvJKg "~YT: Objectivity" "YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA "~YT: Computerphile" "YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2C_jShtL725hvbm1arSV9w "~YT: CGP Grey" "YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCCezIgC97PvUuR4_gbFUs5g "~YT: Corey Schafer" "YouTube" "Programming"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCe3grVLhUbejPXEaYMHKFbQ "~YT: Behind the Bar" "YouTube" "Food & Drinks"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCgUlPeG3lQvla3xvdE8GBbQ "~YT: MythyMoo" "YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~YT: Luke Smith" "YouTube" "Technology" "Linux"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~YT: DistroTube" "YouTube" "Technology" "Linux"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC3XTzVzaHQEd30rQbuvCtTQ "~YT: LastWeekTonight" "YouTube" "News"
+
+# Manga & Anime
+https://mangadex.org/rss/follows/CHzs9Yc3M2kEw4XhDKqQfUN86ZmAS7Pg "~MangaDex" "Entertainment" "Manga"
+https://www.erai-raws.info/rss-1080 "~Erai-Raws 1080p Releases" "Anime" "Entertainment"
+https://www.erai-raws.info/rss-movies-1080 "~Erai-Raws Movies & Specials" "Entertainment" "Anime" 
+https://www.erai-raws.info/rss-batch-1080-magnet "~Erai-Raws Batch Releases" "Anime" "Entertainment"
+
+# Linux
+https://distrowatch.com/news/dwd.xml "~DistroWatch Latest Distributions" "Linux" "Technology"
+https://distrowatch.com/news/news-headlines.xml "~DistroWatch Headlines" "Linux" "Technology" "News" "Technology News"
+
+# Hacker News
+https://hnrss.org/frontpage "~Hacker News Frontpage" "News" "Technology"
+
+# Comics
+https://xkcd.com/atom.xml "~xkcd" "Entertainment" "Comics"

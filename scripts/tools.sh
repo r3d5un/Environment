@@ -21,7 +21,6 @@ sudo dnf install -y \
 	mangohud \
 	mpv \
 	neovim \
-	newsboat \
 	nodejs \
 	pass \
 	pavucontrol \
