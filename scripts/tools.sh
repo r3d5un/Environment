@@ -19,7 +19,6 @@ sudo dnf install -y \
 	luarocks \
 	mangohud \
 	mpv \
-	neovim \
 	nodejs \
 	pavucontrol \
 	ripgrep \
