@@ -21,7 +21,6 @@ sudo dnf install -y \
 	mpv \
 	neovim \
 	nodejs \
-	pass \
 	pavucontrol \
 	ripgrep \
 	snapd \
