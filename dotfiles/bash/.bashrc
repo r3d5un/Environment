@@ -47,3 +47,6 @@ alias amaterasu-syncthing="ssh r3d5un@amaterasu -L 18384:localhost:8384"
 
 # Sync Airflow DAGs
 alias sync-dags='rsync -av --delete --exclude "*__pycache__" /home/r3d5un/Development/Projects/Airflow/DAGs/ /home/r3d5un/Cluster/airflow-airflow-dags-pvc-pvc-b6f2bfbf-23d8-4e36-abc8-1af5440fbf48/'
+
+# Load Restic secrets as environment variables from the password-store
+alias load-restic="source $HOME/Environment/profiles/restic.sh"

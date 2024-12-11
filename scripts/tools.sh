@@ -23,7 +23,6 @@ sudo dnf install -y \
 	nodejs \
 	pass \
 	pavucontrol \
-	restic \
 	ripgrep \
 	snapd \
 	stow \
