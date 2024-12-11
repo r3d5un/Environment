@@ -12,7 +12,6 @@ sudo dnf install -y \
 	make \
 	git \
 	fd-find \
-	foot \
 	gcc \
 	gh \
 	htop \
