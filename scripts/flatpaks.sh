@@ -33,6 +33,7 @@ sudo -u r3d5un flatpak install flathub -y \
 	org.signal.Signal \
 	org.torproject.torbrowser-launcher \
 	rest.insomnia.Insomnia \
-	sh.ppy.osu
+	sh.ppy.osu \
+	us.zoom.Zoom
 
 sudo -u r3d5un flatpak update -y
