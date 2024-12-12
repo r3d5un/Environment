@@ -12,4 +12,4 @@ sudo dnf install -y \
 	python3.12
 
 log "INFO" "Installing Poetry package manager"
-curl -sSL https://install.python-poetry.org | python3 -
+sudo -u r3d5un curl -sSL https://install.python-poetry.org | python3 -

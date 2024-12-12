@@ -9,9 +9,9 @@ require_root
 
 sudo dnf install flatpak
 
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+sudo -u r3d5un flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-flatpak install flathub \
+sudo -u r3d5un flatpak install flathub -y \
 	com.bitwarden.desktop \
 	com.calibre_ebook.calibre \
 	com.discordapp.Discord \
@@ -35,4 +35,4 @@ flatpak install flathub \
 	rest.insomnia.Insomnia \
 	sh.ppy.osu
 
-flatpak update -y
+sudo -u r3d5un flatpak update -y
