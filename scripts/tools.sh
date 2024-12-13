@@ -27,4 +27,5 @@ sudo dnf install -y \
 	tokei \
 	wine \
 	winetricks \
-	zig
+	zig \
+	s3fs-fuse
