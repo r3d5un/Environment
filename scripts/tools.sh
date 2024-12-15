@@ -28,4 +28,5 @@ sudo dnf install -y \
 	wine \
 	winetricks \
 	zig \
-	s3fs-fuse
+	s3fs-fuse \
+	s3cmd
