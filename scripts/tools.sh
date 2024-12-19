@@ -29,4 +29,5 @@ sudo dnf install -y \
 	winetricks \
 	zig \
 	s3fs-fuse \
-	s3cmd
+	s3cmd \
+	steam-devices
