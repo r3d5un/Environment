@@ -40,3 +40,6 @@ go install github.com/air-verse/air@latest
 
 log "INFO" "Installing swaggo"
 go install github.com/swaggo/swag/cmd/swag@latest
+
+log "INFO" "Installing fieldalignment"
+go install golang.org/x/tools/go/analysis/passes/fieldalignment/cmd/fieldalignment@latest
