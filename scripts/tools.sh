@@ -30,4 +30,5 @@ sudo dnf install -y \
 	zig \
 	s3fs-fuse \
 	s3cmd \
-	steam-devices
+	steam-devices \
+	gcolor3
