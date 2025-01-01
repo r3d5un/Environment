@@ -41,7 +41,6 @@ export PATH="$PATH:/home/r3d5un/.local/share/JetBrains/Toolbox/scripts"
 . "$HOME/.cargo/env"
 
 # SSH Tunnel
-alias natsuki-tunnel="ssh natsuki -L 127.0.0.1:22001:127.0.0.1:22000 -R 127.0.0.1:22001:127.0.0.1:22000"
 alias amaterasu-tunnel="ssh amaterasu -L 127.0.0.1:22001:127.0.0.1:22000 -R 127.0.0.1:22001:127.0.0.1:22000"
 alias amaterasu-syncthing="ssh r3d5un@amaterasu -L 18384:localhost:8384"
 
