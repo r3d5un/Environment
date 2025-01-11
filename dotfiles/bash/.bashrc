@@ -51,6 +51,7 @@ alias sync-dags='rsync -av --delete --exclude "*__pycache__" /home/r3d5un/Develo
 alias sync-rp='rsync -urltv --delete -e ssh ~/Development/Projects/rd-regnskapsportal/. okristiansen@dfo-tu-dev02:/home/okristiansen/Projects/Regnskapsportal/'
 alias sync-airflow='rsync -urltv --delete -e ssh ~/Development/Projects/RD-Airflow/. okristiansen@dfo-tu-dev02:/home/okristiansen/Projects/Airflow/'
 alias sync-datahub='rsync -urltv --delete -e ssh ~/Development/Projects/DatahubApiGo/. okristiansen@dfo-tu-dev02:/home/okristiansen/Projects/Datahub/'
+alias sync-legacy='rsync -urltv --delete -e ssh ~/Development/Projects/legacy-system-archival-processes/. okristiansen@dfo-tu-dev02:/home/okristiansen/Projects/Legacy/'
 
 # Load Restic secrets as environment variables from the password-store
 alias load-restic="source $HOME/Environment/profiles/restic.sh"
