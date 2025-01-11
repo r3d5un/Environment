@@ -57,9 +57,9 @@ alias sync-legacy='rsync -urltv --delete -e ssh ~/Development/Projects/legacy-sy
 alias load-restic="source $HOME/Environment/profiles/restic.sh"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach-session -t default || tmux new-session -s default
+if command -v tmux &>/dev/null && [ -z "$TMUX" ]; then
+	tmux attach-session -t default || tmux new-session -s default
 fi
