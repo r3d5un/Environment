@@ -31,4 +31,5 @@ sudo dnf install -y \
 	s3fs-fuse \
 	s3cmd \
 	steam-devices \
-	gcolor3
+	gcolor3 \
+	parallel
