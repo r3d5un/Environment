@@ -32,4 +32,5 @@ sudo dnf install -y \
 	s3cmd \
 	steam-devices \
 	gcolor3 \
-	parallel
+	parallel \
+	keepassxc
