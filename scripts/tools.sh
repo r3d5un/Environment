@@ -33,4 +33,5 @@ sudo dnf install -y \
 	steam-devices \
 	gcolor3 \
 	parallel \
-	keepassxc
+	keepassxc \
+	kodi
