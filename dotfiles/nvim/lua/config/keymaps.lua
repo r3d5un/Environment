@@ -86,6 +86,7 @@ map("n", "<leader>nlb", "<cmd>ObsidianBacklinks<cr>", { noremap = true, silent =
 map("n", "<leader>nll", "<cmd>ObsidianLink<cr>", { noremap = true, silent = true, desc = "[L]ink Document" })
 map("n", "<leader>nln", "<cmd>ObsidianLinkNew<cr>", { noremap = true, silent = true, desc = "Link [N]ew Document" })
 map("n", "<leader>nln", "<cmd>ObsidianLinkNew<cr>", { noremap = true, silent = true, desc = "Link [N]ew Document" })
+map("v", "<leader>nft", ":!column -t -s '|' -o '|' <CR>", { noremap = true, silent = true, desc = "Note format table" })
 
 -- tmux
 map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { noremap = true, silent = true, desc = "tmux window left" })
