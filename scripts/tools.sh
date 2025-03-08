@@ -34,4 +34,5 @@ sudo dnf install -y \
 	gcolor3 \
 	parallel \
 	keepassxc \
-	kodi
+	kodi \
+	nextcloud-client
