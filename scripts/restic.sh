@@ -7,5 +7,5 @@ echo_banner "RESTIC"
 
 require_root
 
-sudo dnf install -y \
-	restic
+sudo zypper --non-interactive install restic
+
