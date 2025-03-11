@@ -5,6 +5,7 @@ source "$cwd/../utils/utils.sh"
 
 echo_banner "BASH"
 
-sudo dnf install -y stow
+sudo zypper --non-interactive install stow
 
 stow --verbose -d $cwd/../dotfiles -t /home/r3d5un/ bash
+
