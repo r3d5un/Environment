@@ -5,6 +5,9 @@ source "$cwd/../utils/utils.sh"
 
 echo_banner "NEWSBOAT"
 
-sudo dnf install -y newsboat stow
+sudo zypper --non-interactive install \
+	newsboat \
+	stow
 
 stow --verbose -d $cwd/../dotfiles -t /home/r3d5un/.newsboat/ newsboat
+
