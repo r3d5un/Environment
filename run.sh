@@ -30,7 +30,7 @@ done
 
 log "INFO" "Updating system"
 if [[ $dry_run == "0" ]]; then
-	sudo dnf update -y
+	sudo zypper --non-interactive dup
 fi
 
 scripts=$(find $cwd/scripts -mindepth 1 -maxdepth 1 -executable | sort)
@@ -42,4 +42,5 @@ for script in $scripts; do
 	fi
 done
 
-log "INFO" "Done"
+log "INFO" "Done. Reboot required for all changes to take effect."
+
