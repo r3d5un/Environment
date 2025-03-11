@@ -7,10 +7,11 @@ echo_banner "NEOVIM"
 
 require_root
 
-sudo dnf install -y \
+sudo zypper --non-interactive install \
 	neovim \
-	fd-find \
-	ripgrep
+	fd \
+	ripgrep \
+	tree-sitter
 
 font_path=/tmp/iosevka.zip
 if [ -e "$font_path" ]; then
