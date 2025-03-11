@@ -20,7 +20,10 @@ log "INFO" "Refreshing font cache"
 fc-cache -f
 
 log "INFO" "Installing kitty and dependencies"
-sudo dnf install -y foot stow
+sudo zypper --non-interactive install \
+	foot \
+	stow
 
 log "INFO" "Stowing configuration"
 stow --verbose -d $cwd/../dotfiles -t /home/r3d5un/.config/foot/ foot
+
