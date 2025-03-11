@@ -5,34 +5,27 @@ source "$cwd/../utils/utils.sh"
 
 echo_banner "TOOLS"
 
-sudo dnf install -y \
-	alacritty \
+sudo zypper --non-interactive install \
 	btop \
 	chromium \
 	make \
 	git \
-	fd-find \
+	fd \
 	gcc \
-	gh \
 	htop \
-	luarocks \
+	lua53-luarocks \
 	mangohud \
 	mpv \
 	nodejs \
 	pavucontrol \
 	ripgrep \
-	snapd \
 	stow \
-	syncthing \
 	tokei \
 	wine \
 	winetricks \
-	zig \
-	s3fs-fuse \
+	# TODO: Zig
+	s3fs \
 	s3cmd \
 	steam-devices \
-	gcolor3 \
-	parallel \
 	keepassxc \
-	kodi \
 	nextcloud-client
