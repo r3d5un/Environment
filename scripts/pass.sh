@@ -7,7 +7,7 @@ echo_banner "PASS"
 
 require_root
 
-sudo dnf install -y \
+sudo zypper --non-interactive install \
 	gnupg \
 	pass \
 	git
@@ -54,3 +54,4 @@ echo -e "Quit and save:\n"
 echo -e "${light_gray}quit${no_color}\n\n"
 
 sudo -u r3d5un pass
+
