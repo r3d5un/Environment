@@ -7,4 +7,5 @@ echo_banner "ANSIBLE"
 
 require_root
 
-sudo dnf install -y ansible
+sudo zypper --non-interactive install ansible
+
