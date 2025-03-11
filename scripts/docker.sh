@@ -7,22 +7,20 @@ echo_banner "DOCKER"
 
 require_root
 
-log "INFO" "Checking if the Docker repository is enabled"
-if dnf repolist | grep -q "docker-ce-stable"; then
-	log "INFO" "Docker repository enabled"
-else
-	log "INFO" "Docker repository not found. Adding repository..."
+sudo zypper --non-interactive install \
+	docker \
+	docker-compose \
+	docker-compose-switch
 
-	log "INFO" "Enabeling DNF plugins"
-	sudo dnf -y install dnf-plugins-core
-	log "INFO" "Adding Docker repository"
-	sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-
-	log "INFO" "Repository added"
-fi
-
-sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
-
+log "INFO" "Enabeling Docker service"
 sudo systemctl enable --now docker
 
-docker run hello-world
+log "INFO" "Setting up docker group"
+sudo usermod -G docker -a r3d5un
+
+log "INFO" "Restarting Docker service"
+sudo systemctl restart docker
+
+log "INFO" "Running test container"
+docker run --rm hello-world
+
