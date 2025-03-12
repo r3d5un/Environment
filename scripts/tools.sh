@@ -28,4 +28,6 @@ sudo zypper --non-interactive install \
 	s3cmd \
 	steam-devices \
 	keepassxc \
-	nextcloud-client
+	nextcloud-client \
+	opi
+
