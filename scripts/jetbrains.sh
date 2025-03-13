@@ -9,6 +9,13 @@ echo_banner "JETBRAINS"
 
 require_root
 
+log "INFO" "Installing JetBrains dependencies"
+sudo zypper --non-interactive install \
+	java-23-openjdk \
+	java-23-openjdk-devel \
+	java-23-openjdk-headless \
+	libgthread-2_0-0
+
 file_path=/tmp/jetbrains.tar.gz
 if [ -e "$file_path" ]; then
 	log "INFO" "$file_path already exists"
