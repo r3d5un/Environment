@@ -9,5 +9,7 @@ sudo zypper --non-interactive install \
 	newsboat \
 	stow
 
-stow --verbose -d $cwd/../dotfiles -t /home/r3d5un/.newsboat/ newsboat
+log "INFO" "Making configuration directory"
+sudo -u r3d5un mkdir -p /home/r3d5un/.newsboat
 
+stow --verbose -d $cwd/../dotfiles -t /home/r3d5un/.newsboat/ newsboat

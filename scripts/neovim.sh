@@ -27,5 +27,8 @@ sudo unzip -o /tmp/iosevka.zip -d /usr/share/fonts/iosevka-nerd-font
 log "INFO" "Refreshing font cache"
 fc-cache -f
 
+log "INFO" "Making configuration directory"
+sudo -u r3d5un mkdir -p /home/r3d5un/.config/nvim
+
 log "INFO" "Stowing configuration"
 stow --verbose -d $cwd/../dotfiles -t /home/r3d5un/.config/nvim/ nvim
