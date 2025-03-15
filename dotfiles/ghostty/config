@@ -14,8 +14,6 @@ keybind = ctrl+shift+k=goto_split:up
 keybind = ctrl+shift+j=goto_split:down
 keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+l=goto_split:right
-keybind = ctrl+space>=equalize_splits
-
 
 # Tabs
 keybind = ctrl+space>c=new_tab
@@ -37,4 +35,8 @@ window-decoration = auto
 window-padding-x = 10
 window-padding-y = 10
 keybind = f11=toggle_fullscreen
+
+
+# Surfaces
+keybind = ctrl+space>x=close_surface
 
