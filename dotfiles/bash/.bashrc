@@ -19,6 +19,9 @@ export VISUAL=nvim
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:"$HOME/go/bin:$PATH"
 
+# Zig
+export PATH=$PATH:/usr/local/zig/bin
+
 # Added by Toolbox App
 export PATH="$PATH:/home/r3d5un/.local/share/JetBrains/Toolbox/scripts"
 
