@@ -19,7 +19,7 @@ sudo unzip -o $font_path -d /usr/share/fonts/iosevka-nerd-font
 log "INFO" "Refreshing font cache"
 fc-cache -f
 
-log "INFO" "Installing kitty and dependencies"
+log "INFO" "Installing Ghostty and dependencies"
 sudo zypper --non-interactive install \
 	ghostty \
 	stow
