@@ -27,19 +27,19 @@ export PATH="/usr/local/go/bin:$PATH"
 log "INFO" "Updating tooling"
 
 log "INFO" "Installing staticcheck"
-go install honnef.co/go/tools/cmd/staticcheck@latest
+sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install honnef.co/go/tools/cmd/staticcheck@latest
 
 log "INFO" "Installing golang-migrate"
-go install -tags 'postgres,sqlserver,mysql,mariadb' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install -tags 'postgres,sqlserver,mysql,mariadb' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
 
 log "INFO" "Installing golines"
-go install github.com/segmentio/golines@latest
+sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install github.com/segmentio/golines@latest
 
 log "INFO" "Installing air"
-go install github.com/air-verse/air@latest
+sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install github.com/air-verse/air@latest
 
 log "INFO" "Installing swaggo"
-go install github.com/swaggo/swag/cmd/swag@latest
+sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install github.com/swaggo/swag/cmd/swag@latest
 
 log "INFO" "Installing fieldalignment"
-go install golang.org/x/tools/go/analysis/passes/fieldalignment/cmd/fieldalignment@latest
+sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install golang.org/x/tools/go/analysis/passes/fieldalignment/cmd/fieldalignment@latest
