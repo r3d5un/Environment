@@ -28,9 +28,15 @@ while [[ $# -gt 0 ]]; do
 	fi
 done
 
+
+if ! zypper lr | grep -q 'packman-essentials'; then
+	log "INFO" "Adding Packman repository"
+    sudo zypper ar -cfp 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/Essentials/' packman-essentials
+fi
+
 log "INFO" "Updating system"
 if [[ $dry_run == "0" ]]; then
-	sudo zypper --non-interactive dup
+	sudo zypper dup --from packman-essentials --allow-vendor-change
 fi
 
 scripts=$(find $cwd/scripts -mindepth 1 -maxdepth 1 -executable | sort)
