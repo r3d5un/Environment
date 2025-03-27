@@ -37,6 +37,7 @@ fi
 log "INFO" "Updating system"
 if [[ $dry_run == "0" ]]; then
 	sudo zypper dup --from packman-essentials --allow-vendor-change
+	sudo zypper dup
 fi
 
 scripts=$(find $cwd/scripts -mindepth 1 -maxdepth 1 -executable | sort)
