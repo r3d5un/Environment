@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="1.23.4"
+version="1.24.1"
 
 cwd="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 source "$cwd/../utils/utils.sh"
