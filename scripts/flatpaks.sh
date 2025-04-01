@@ -29,7 +29,8 @@ sudo flatpak install flathub -y \
 	org.signal.Signal \
 	org.torproject.torbrowser-launcher \
 	rest.insomnia.Insomnia \
-	us.zoom.Zoom
+	us.zoom.Zoom \
+	rocks.koreader.KOReader
 
 sudo flatpak update -y
 
