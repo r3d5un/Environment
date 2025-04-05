@@ -5,6 +5,8 @@ source "$cwd/../utils/utils.sh"
 
 echo_banner "GHOSTTY"
 
+require_root
+
 font_path=/tmp/iosevka.zip
 if [ -e "$font_path" ]; then
 	log "INFO" "$font_path already exists"
