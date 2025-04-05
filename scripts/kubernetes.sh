@@ -27,11 +27,11 @@ sudo zypper --non-interactive install \
 	docker-compose \
 	docker-compose-switch
 
-log "INFO" "Setting up Docker backend for Minikube"
+log "INFO" "Setting up Docker driver for Minikube"
 sudo systemctl enable --now docker
 sudo usermod -G docker -a r3d5un
 sudo systemctl restart docker
 
 log "INFO" "Checking Minikube status"
-minikube status
+minikube start --driver=docker
 
