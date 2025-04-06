@@ -102,15 +102,10 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /var/lib/postgresql/data
-            - name: dshm
-              mountPath: /dev/shm
       volumes:
         - name: data
           persistentVolumeClaim:
             claimName: postgresql-pvc
-        - name: dshm
-          emptyDir:
-            sizeLimit: 4096Mi
 ---
 apiVersion: v1
 kind: Service
