@@ -12,6 +12,7 @@ metadata:
   namespace: postgresql
   name: pv-postgresql
 spec:
+  storageClassName: standard
   accessModes:
     - ReadWriteOnce
   capacity:
