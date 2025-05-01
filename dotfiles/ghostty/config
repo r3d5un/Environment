@@ -5,6 +5,9 @@ window-inherit-working-directory = true
 theme = tokyonight_night
 font-family = IosevkaNerdFontMono
 font-size = 10.5
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
 
 # Splits
 keybind = ctrl+space>v=new_split:right
