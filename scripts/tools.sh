@@ -5,8 +5,6 @@ source "$cwd/../utils/utils.sh"
 
 echo_banner "TOOLS"
 
-# TODO: Zig
-
 sudo zypper --non-interactive install \
 	btop \
 	chromium \
