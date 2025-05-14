@@ -18,7 +18,7 @@ gpgcheck=1
 gpgkey=https://pkgs.k8s.io/core:/stable:/v1.32/rpm/repodata/repomd.xml.key
 EOF
 
-sudo zypper --non-interactive install \
+sudo zypper install \
 	minikube \
 	minikube-bash-completion \
 	kubectl \
