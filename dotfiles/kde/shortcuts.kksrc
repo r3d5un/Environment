@@ -6,6 +6,10 @@ switch-to-activity-f5f9c2bb-9268-4cd9-a89b-23f98a1672ce=
 Exec=ghostty
 Name=Ghostty
 
+[Custom Commands][net.local.xdg-open.desktop]
+Exec=xdg-open ~/Documents/Notes/index.md
+Name=Open Notes
+
 [KDE Keyboard Layout Switcher][Global Shortcuts]
 Switch keyboard layout to English (US)=
 Switch keyboard layout to Norwegian (no dead keys)=
@@ -104,6 +108,9 @@ new-private-window=
 new-window=
 profilemanager=
 
+[com.discordapp.Discord.desktop][Global Shortcuts]
+_launch=Meta+D
+
 [com.mitchellh.ghostty.desktop][Global Shortcuts]
 _launch=Meta+T
 new-window=Meta+Shift+T
@@ -158,7 +165,7 @@ MoveZoomRight=
 MoveZoomUp=
 Overview=Meta+W
 Setup Window Shortcut=
-Show Desktop=Meta+D
+Show Desktop=
 Suspend Compositing=Alt+Shift+F12
 Switch One Desktop Down=Meta+Ctrl+Down
 Switch One Desktop Up=Meta+Ctrl+Up
@@ -309,6 +316,9 @@ stopmedia=Media Stop
 [net.local.ghostty.desktop][Global Shortcuts]
 _launch=Meta+T
 
+[net.local.xdg-open.desktop][Global Shortcuts]
+_launch=Meta+N
+
 [org.kde.dolphin.desktop][Global Shortcuts]
 _launch=Meta+E
 
@@ -344,6 +354,9 @@ RecordWindow=Meta+Ctrl+R
 RectangularRegionScreenShot=Meta+Shift+Print
 WindowUnderCursorScreenShot=Meta+Ctrl+Print
 _launch=Meta+Shift+S; Print
+
+[org.keepassxc.KeePassXC.desktop][Global Shortcuts]
+_launch=Meta+K
 
 [org_kde_powerdevil][Global Shortcuts]
 Decrease Keyboard Brightness=Keyboard Brightness Down
