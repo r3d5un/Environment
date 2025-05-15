@@ -104,6 +104,10 @@ new-private-window=
 new-window=
 profilemanager=
 
+[com.mitchellh.ghostty.desktop][Global Shortcuts]
+_launch=Meta+T
+new-window=Meta+Shift+T
+
 [kaccess][Global Shortcuts]
 Toggle Screen Reader On and Off=Meta+Alt+S
 
