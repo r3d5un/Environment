@@ -1,4 +1,5 @@
 [ActivityManager][Global Shortcuts]
+switch-to-activity-2977969d-6ea4-41e9-af98-0774123174ef=
 switch-to-activity-f5f9c2bb-9268-4cd9-a89b-23f98a1672ce=
 
 [Custom Commands][net.local.ghostty.desktop]
@@ -14,11 +15,11 @@ Switch to Next Keyboard Layout=Meta+Space
 [StandardShortcuts]
 AboutApp=
 AboutKDE=
-Activate Next Tab=Ctrl+PgDown; Ctrl+]
+Activate Next Tab=Ctrl+]; Ctrl+PgDown
 Activate Previous Tab=Ctrl+[; Ctrl+PgUp
 ActualSize=Ctrl+0
 AddBookmark=Ctrl+B
-Back=Back; Alt+Left
+Back=Alt+Left; Back
 BackwardWord=Ctrl+Left
 Begin=Ctrl+Home
 BeginningOfLine=Home
@@ -26,7 +27,7 @@ Clear=
 Close=Ctrl+Esc; Ctrl+W
 ConfigureNotifications=
 ConfigureToolbars=
-Copy=Ctrl+Ins; Ctrl+C
+Copy=Ctrl+C; Ctrl+Ins
 CreateFolder=Ctrl+Shift+N
 Cut=Ctrl+X; Shift+Del
 DeleteFile=Shift+Del
@@ -82,7 +83,7 @@ RotateUp=Up
 Save=Ctrl+S
 SaveAs=Ctrl+Shift+S
 SelectAll=Ctrl+A
-ShowHideHiddenFiles=Alt+.; Ctrl+H
+ShowHideHiddenFiles=Ctrl+H; Alt+.
 ShowMenubar=Ctrl+M
 ShowStatusbar=
 ShowToolbar=
@@ -97,13 +98,19 @@ Zoom=
 ZoomIn=Ctrl+=; Ctrl++
 ZoomOut=Ctrl+-
 
+[app.zen_browser.zen.desktop][Global Shortcuts]
+_launch=Meta+F
+new-private-window=
+new-window=
+profilemanager=
+
 [kaccess][Global Shortcuts]
 Toggle Screen Reader On and Off=Meta+Alt+S
 
 [kcm_touchpad][Global Shortcuts]
 Disable Touchpad=Touchpad Off
 Enable Touchpad=Touchpad On
-Toggle Touchpad=Touchpad Toggle; Meta+Ctrl+Zenkaku Hankaku
+Toggle Touchpad=Meta+Ctrl+Zenkaku Hankaku; Touchpad Toggle
 
 [kmix][Global Shortcuts]
 decrease_microphone_volume=Microphone Volume Down
@@ -112,12 +119,12 @@ decrease_volume_small=Shift+Volume Down
 increase_microphone_volume=Microphone Volume Up
 increase_volume=Volume Up
 increase_volume_small=Shift+Volume Up
-mic_mute=Microphone Mute; Meta+Volume Mute
+mic_mute=Meta+Volume Mute; Microphone Mute
 mute=Volume Mute
 
 [ksmserver][Global Shortcuts]
 Halt Without Confirmation=
-Lock Session=Screensaver; Meta+L
+Lock Session=Meta+L; Screensaver
 Log Out=Ctrl+Alt+Del
 Log Out Without Confirmation=
 LogOut=
@@ -158,7 +165,7 @@ Switch Window Left=Meta+Alt+Left
 Switch Window Right=Meta+Alt+Right
 Switch Window Up=Meta+Alt+Up
 Switch to Desktop 1=Meta+1
-Switch to Desktop 10=
+Switch to Desktop 10=Meta+0;\s
 Switch to Desktop 11=
 Switch to Desktop 12=
 Switch to Desktop 13=
@@ -282,7 +289,7 @@ Window to Screen 6=
 Window to Screen 7=
 disableInputCapture=Meta+Shift+Esc
 view_actual_size=
-view_zoom_in=Meta++; Meta+=
+view_zoom_in=Meta+=; Meta++
 view_zoom_out=Meta+-
 
 [mediacontrol][Global Shortcuts]
@@ -311,10 +318,10 @@ _launch=
 
 [org.kde.krunner.desktop][Global Shortcuts]
 RunClipboard=Alt+Shift+F2
-_launch=Search; Alt+Space; Alt+F2
+_launch=Alt+Space; Alt+F2; Search
 
 [org.kde.kscreen.desktop][Global Shortcuts]
-ShowOSD=Display; Meta+P
+ShowOSD=Meta+P; Display
 
 [org.kde.plasma-systemmonitor.desktop][Global Shortcuts]
 _launch=Meta+Esc
@@ -327,7 +334,7 @@ ActiveWindowScreenShot=Meta+Print
 CurrentMonitorScreenShot=
 FullScreenScreenShot=Shift+Print
 OpenWithoutScreenshot=
-RecordRegion=Meta+R; Meta+Shift+R
+RecordRegion=Meta+Shift+R; Meta+R
 RecordScreen=Meta+Alt+R
 RecordWindow=Meta+Ctrl+R
 RectangularRegionScreenShot=Meta+Shift+Print
@@ -347,7 +354,7 @@ PowerOff=Power Off
 Sleep=Sleep
 Toggle Keyboard Backlight=Keyboard Light On/Off
 Turn Off Screen=
-powerProfile=Battery; Meta+B
+powerProfile=Meta+B; Battery
 
 [plasmashell][Global Shortcuts]
 activate application launcher=Alt+F1; Meta
