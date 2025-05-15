@@ -9,7 +9,7 @@ require_root
 
 sudo zypper --non-interactive install \
 	gnupg \
-	pass \
+	password-store \
 	git
 
 # PGP keys will be required for the password store to work. The following
