@@ -31,7 +31,7 @@ sudo flatpak install flathub -y \
 	rest.insomnia.Insomnia \
 	us.zoom.Zoom \
 	rocks.koreader.KOReader \
-	flathub app.zen_browser.zen
+	flathub app.zen_browser.zen \
+	io.github.pwr_solaar.solaar
 
 sudo flatpak update -y
-
