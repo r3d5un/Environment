@@ -11,9 +11,9 @@ require_root
 
 log "INFO" "Installing JetBrains dependencies"
 sudo zypper --non-interactive install \
-	java-23-openjdk \
-	java-23-openjdk-devel \
-	java-23-openjdk-headless \
+	java-24-openjdk \
+	java-24-openjdk-devel \
+	java-24-openjdk-headless \
 	libgthread-2_0-0
 
 file_path=/tmp/jetbrains.tar.gz
@@ -28,4 +28,4 @@ log "INFO" "Installing JetBrains Toolbox"
 sudo rm -rf /opt/jetbrains && tar -C /opt -xzf $file_path
 
 log "INFO" "Stowing IdeaVim configuration"
-stow --verbose -d $cwd/../dotfiles -t /home/r3d5un/ ideavim
+stow --verbose -d "$cwd/../dotfiles" -t /home/r3d5un/ ideavim
