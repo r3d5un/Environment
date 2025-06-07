@@ -28,4 +28,5 @@ sudo zypper --non-interactive install \
 	steam-devices \
 	keepassxc \
 	nextcloud-client \
-	opi
+	opi \
+	google-noto-sans-cjk-fonts
