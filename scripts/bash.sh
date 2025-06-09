@@ -7,5 +7,5 @@ echo_banner "BASH"
 
 sudo zypper --non-interactive install stow
 
-stow --verbose -d $cwd/../dotfiles -t /home/r3d5un/ bash
+stow --verbose -d "$cwd/../dotfiles" -t "/home/r3d5un/" bash
 
