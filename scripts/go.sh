@@ -43,3 +43,7 @@ sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install github.com/swaggo/s
 
 log "INFO" "Installing fieldalignment"
 sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install golang.org/x/tools/go/analysis/passes/fieldalignment/cmd/fieldalignment@latest
+
+log "INFO" "Installing protobuf plugin"
+sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+
