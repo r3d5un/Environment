@@ -32,4 +32,5 @@ sudo zypper --non-interactive install \
 	google-noto-sans-cjk-fonts \
 	zoxide \
 	fzf \
-	eza
+	eza \
+	bat
