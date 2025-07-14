@@ -33,4 +33,5 @@ sudo zypper --non-interactive install \
 	zoxide \
 	fzf \
 	eza \
-	bat
+	bat \
+	entr
