@@ -31,4 +31,5 @@ sudo zypper --non-interactive install \
 	opi \
 	google-noto-sans-cjk-fonts \
 	zoxide \
-	fzf
+	fzf \
+	eza

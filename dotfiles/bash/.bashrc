@@ -44,3 +44,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Zoxide
 eval "$(zoxide init --cmd cd bash)"
+
+# ls alterantive
+alias ls='eza'
