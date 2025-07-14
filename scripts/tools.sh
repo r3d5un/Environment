@@ -29,4 +29,6 @@ sudo zypper --non-interactive install \
 	keepassxc \
 	nextcloud-client \
 	opi \
-	google-noto-sans-cjk-fonts
+	google-noto-sans-cjk-fonts \
+	zoxide \
+	fzf
