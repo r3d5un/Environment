@@ -34,4 +34,5 @@ sudo zypper --non-interactive install \
 	fzf \
 	eza \
 	bat \
-	entr
+	entr \
+	yazi
