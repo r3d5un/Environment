@@ -35,15 +35,19 @@ alias sync-datahub='rsync -urltv --delete -e ssh ~/Development/Projects/DatahubA
 alias sync-legacy='rsync -urltv --delete -e ssh ~/Development/Projects/legacy-system-archival-processes/. okristiansen@dfo-tu-dev02:/home/okristiansen/Projects/Legacy/'
 
 # Load Restic secrets as environment variables from the password-store
-alias load-restic="source $HOME/Environment/profiles/restic.sh"
+alias load-restic="source ~/Environment/profiles/restic.sh"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 . "$HOME/.cargo/env"
 
+# ls alterantive
+alias ls='eza'
+
 # Zoxide
 eval "$(zoxide init --cmd cd bash)"
 
-# ls alterantive
-alias ls='eza'
+# Starship
+eval "$(starship init bash)"
+
