@@ -36,5 +36,4 @@ sudo zypper --non-interactive install \
 	bat \
 	entr \
 	yazi \
-	lazygit \
-	starship
+	lazygit
