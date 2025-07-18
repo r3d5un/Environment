@@ -35,4 +35,6 @@ sudo zypper --non-interactive install \
 	eza \
 	bat \
 	entr \
-	yazi
+	yazi \
+	lazygit \
+	starship
