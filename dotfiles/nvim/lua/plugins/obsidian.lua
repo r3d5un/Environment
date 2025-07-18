@@ -1,12 +1,14 @@
-local map = vim.keymap.set
-
 return {
-	"epwalsh/obsidian.nvim",
+	"obsidian-nvim/obsidian.nvim",
 	version = "*", -- latest release
 	lazy = true,
 	ft = "markdown",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		"hrsh7th/nvim-cmp",
+		"nvim-telescope/telescope.nvim",
+		"nvim-treesitter/nvim-treesitter",
+		"MeanderingProgrammer/render-markdown.nvim",
 	},
 	opts = {
 		workspaces = {
