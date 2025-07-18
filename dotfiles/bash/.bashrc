@@ -45,9 +45,9 @@ export NVM_DIR="$HOME/.nvm"
 # ls alterantive
 alias ls='eza'
 
-# Zoxide
-eval "$(zoxide init --cmd cd bash)"
-
 # Starship
 eval "$(starship init bash)"
+
+# Zoxide
+eval "$(zoxide init --cmd cd bash)"
 
