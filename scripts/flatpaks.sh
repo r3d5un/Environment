@@ -18,7 +18,6 @@ sudo flatpak install flathub -y \
 	com.github.johnfactotum.Foliate \
 	com.github.tchx84.Flatseal \
 	com.obsproject.Studio \
-	com.valvesoftware.Steam \
 	md.obsidian.Obsidian \
 	net.ankiweb.Anki \
 	net.lutris.Lutris \
