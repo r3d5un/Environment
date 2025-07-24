@@ -43,5 +43,6 @@ sudo zypper --non-interactive install \
 	foliate \
 	lutris \
 	filezilla \
-	MozillaThunderbird
+	MozillaThunderbird \
+	kamoso
 
