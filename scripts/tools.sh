@@ -39,5 +39,6 @@ sudo zypper --non-interactive install \
 	lazygit \
 	bitwarden \
 	calibre \
-	discord
+	discord \
+	foliate
 
