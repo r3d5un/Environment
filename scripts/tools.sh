@@ -36,4 +36,6 @@ sudo zypper --non-interactive install \
 	bat \
 	entr \
 	yazi \
-	lazygit
+	lazygit \
+	bitwarden
+

@@ -12,7 +12,6 @@ sudo zypper --non-interactive install flatpak
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 sudo flatpak install flathub -y \
-	com.bitwarden.desktop \
 	com.calibre_ebook.calibre \
 	com.discordapp.Discord \
 	com.github.johnfactotum.Foliate \
