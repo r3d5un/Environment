@@ -37,5 +37,6 @@ sudo zypper --non-interactive install \
 	entr \
 	yazi \
 	lazygit \
-	bitwarden
+	bitwarden \
+	calibre
 
