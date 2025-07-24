@@ -41,5 +41,6 @@ sudo zypper --non-interactive install \
 	calibre \
 	discord \
 	foliate \
-	lutris
+	lutris \
+	filezilla
 

@@ -16,7 +16,6 @@ sudo flatpak install flathub -y \
 	com.obsproject.Studio \
 	md.obsidian.Obsidian \
 	net.ankiweb.Anki \
-	org.filezillaproject.Filezilla \
 	org.mozilla.Thunderbird \
 	org.qbittorrent.qBittorrent \
 	org.remmina.Remmina \
@@ -30,3 +29,4 @@ sudo flatpak install flathub -y \
 	flathub sh.ppy.osu
 
 sudo flatpak update -y
+
