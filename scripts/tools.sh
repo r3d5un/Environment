@@ -40,5 +40,6 @@ sudo zypper --non-interactive install \
 	bitwarden \
 	calibre \
 	discord \
-	foliate
+	foliate \
+	lutris
 

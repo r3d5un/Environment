@@ -16,7 +16,6 @@ sudo flatpak install flathub -y \
 	com.obsproject.Studio \
 	md.obsidian.Obsidian \
 	net.ankiweb.Anki \
-	net.lutris.Lutris \
 	org.filezillaproject.Filezilla \
 	org.mozilla.Thunderbird \
 	org.qbittorrent.qBittorrent \
