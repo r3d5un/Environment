@@ -16,7 +16,6 @@ sudo flatpak install flathub -y \
 	com.obsproject.Studio \
 	md.obsidian.Obsidian \
 	net.ankiweb.Anki \
-	org.mozilla.Thunderbird \
 	org.qbittorrent.qBittorrent \
 	org.remmina.Remmina \
 	org.signal.Signal \

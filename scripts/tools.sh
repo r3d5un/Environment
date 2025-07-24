@@ -42,5 +42,6 @@ sudo zypper --non-interactive install \
 	discord \
 	foliate \
 	lutris \
-	filezilla
+	filezilla \
+	MozillaThunderbird
 
