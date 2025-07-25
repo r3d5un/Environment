@@ -24,7 +24,7 @@ sudo flatpak install flathub -y \
 	us.zoom.Zoom \
 	flathub app.zen_browser.zen \
 	io.github.pwr_solaar.solaar \
-	flathub sh.ppy.osu
+	sh.ppy.osu
 
 sudo flatpak update -y
 
