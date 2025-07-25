@@ -17,7 +17,6 @@ sudo flatpak install flathub -y \
 	md.obsidian.Obsidian \
 	net.ankiweb.Anki \
 	org.qbittorrent.qBittorrent \
-	org.remmina.Remmina \
 	org.signal.Signal \
 	org.torproject.torbrowser-launcher \
 	rest.insomnia.Insomnia \

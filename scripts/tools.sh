@@ -44,5 +44,6 @@ sudo zypper --non-interactive install \
 	lutris \
 	filezilla \
 	MozillaThunderbird \
-	kamoso
+	kamoso \
+	remmina
 
