@@ -20,16 +20,16 @@ Switch to Next Keyboard Layout=Meta+Space
 [StandardShortcuts]
 AboutApp=
 AboutKDE=
-Activate Next Tab=Ctrl+PgDown; Ctrl+]
-Activate Previous Tab=Ctrl+PgUp; Ctrl+[
+Activate Next Tab=Ctrl+]; Ctrl+PgDown
+Activate Previous Tab=Ctrl+[; Ctrl+PgUp
 ActualSize=Ctrl+0
 AddBookmark=Ctrl+B
-Back=Back; Alt+Left
+Back=Alt+Left; Back
 BackwardWord=Ctrl+Left
 Begin=Ctrl+Home
 BeginningOfLine=Home
 Clear=
-Close=Ctrl+W; Ctrl+Esc
+Close=Ctrl+Esc; Ctrl+W
 ConfigureNotifications=
 ConfigureToolbars=
 Copy=Ctrl+C; Ctrl+Ins
@@ -58,7 +58,7 @@ Goto=
 GotoLine=Ctrl+G
 GotoPage=
 Help=F1
-Home=Home Page; Alt+Home
+Home=Alt+Home; Home Page
 KeyBindings=Ctrl+Alt+,
 Mail=
 MoveToTrash=Del
@@ -66,7 +66,7 @@ New=Ctrl+N
 Next=PgDown
 NextCompletion=Ctrl+Down
 Open=Ctrl+O
-OpenContextMenu=Menu; Shift+F10
+OpenContextMenu=Shift+F10; Menu
 OpenMainMenu=F10
 OpenRecent=
 Paste=Shift+Ins; Ctrl+V
@@ -78,7 +78,7 @@ PrintPreview=
 Prior=PgUp
 Quit=Ctrl+Q
 Redo=Ctrl+Shift+Z
-Reload=F5; Refresh
+Reload=Refresh; F5
 RenameFile=F2
 Replace=Ctrl+R
 ReportBug=
@@ -100,7 +100,7 @@ Undo=Ctrl+Z
 Up=Alt+Up
 WhatsThis=Shift+F1
 Zoom=
-ZoomIn=Ctrl+=; Ctrl++
+ZoomIn=Ctrl++; Ctrl+=
 ZoomOut=Ctrl+-
 
 [app.zen_browser.zen.desktop][Global Shortcuts]
@@ -136,7 +136,7 @@ mute=Volume Mute
 
 [ksmserver][Global Shortcuts]
 Halt Without Confirmation=
-Lock Session=Meta+L; Screensaver
+Lock Session=Screensaver; Meta+L
 Log Out=Ctrl+Alt+Del
 Log Out Without Confirmation=
 LogOut=
@@ -151,7 +151,7 @@ Cycle Overview Opposite=
 Decrease Opacity=
 Edit Tiles=Meta+Return
 Expose=Ctrl+F9
-ExposeAll=Ctrl+F10; Launch (C)
+ExposeAll=Launch (C); Ctrl+F10
 ExposeClass=Ctrl+F7
 ExposeClassCurrentDesktop=
 Grid View=Meta+G
@@ -233,10 +233,10 @@ Window Fullscreen=
 Window Grow Horizontal=
 Window Grow Vertical=
 Window Lower=
-Window Maximize=
+Window Maximize=Meta+Up
 Window Maximize Horizontal=
 Window Maximize Vertical=
-Window Minimize=
+Window Minimize=Meta+Down
 Window Move=
 Window Move Center=
 Window No Border=
@@ -333,10 +333,10 @@ _launch=
 
 [org.kde.krunner.desktop][Global Shortcuts]
 RunClipboard=Alt+Shift+F2
-_launch=Search; Alt+Space; Alt+F2
+_launch=Alt+F2; Search; Alt+Space
 
 [org.kde.kscreen.desktop][Global Shortcuts]
-ShowOSD=Display; Meta+P
+ShowOSD=Meta+P; Display
 
 [org.kde.plasma-systemmonitor.desktop][Global Shortcuts]
 _launch=Meta+Esc
@@ -377,7 +377,7 @@ PowerOff=Power Off
 Sleep=Sleep
 Toggle Keyboard Backlight=Keyboard Light On/Off
 Turn Off Screen=
-powerProfile=Battery; Meta+B
+powerProfile=Meta+B; Battery
 
 [plasmashell][Global Shortcuts]
 activate application launcher=Alt+F1; Meta
@@ -391,6 +391,7 @@ activate task manager entry 6=
 activate task manager entry 7=
 activate task manager entry 8=
 activate task manager entry 9=
+activate widget 27=
 clear-history=
 clipboard_action=Meta+Ctrl+X
 cycle-panels=Meta+Alt+P
