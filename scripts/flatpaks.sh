@@ -22,7 +22,6 @@ sudo flatpak install flathub -y \
 	org.torproject.torbrowser-launcher \
 	rest.insomnia.Insomnia \
 	us.zoom.Zoom \
-	rocks.koreader.KOReader \
 	flathub app.zen_browser.zen \
 	io.github.pwr_solaar.solaar \
 	flathub sh.ppy.osu
