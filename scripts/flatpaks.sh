@@ -21,8 +21,7 @@ sudo flatpak install flathub -y \
 	org.torproject.torbrowser-launcher \
 	rest.insomnia.Insomnia \
 	us.zoom.Zoom \
-	io.github.pwr_solaar.solaar \
-	sh.ppy.osu
+	io.github.pwr_solaar.solaar
 
 sudo flatpak update -y
 
