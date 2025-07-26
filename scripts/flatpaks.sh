@@ -20,8 +20,7 @@ sudo flatpak install flathub -y \
 	org.signal.Signal \
 	org.torproject.torbrowser-launcher \
 	rest.insomnia.Insomnia \
-	us.zoom.Zoom \
-	io.github.pwr_solaar.solaar
+	us.zoom.Zoom
 
 sudo flatpak update -y
 
