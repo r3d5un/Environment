@@ -35,10 +35,10 @@ if [[ ! -e "$secrets_dir/public.pgp" || ! -e "$secrets_dir/private.pgp" ]]; then
 	exit 1
 else
 	log "INFO" "Importing private PGP key"
-	sudo -u r3d5un gpg --import $secrets_dir/private.pgp
+	sudo -u r3d5un gpg --import "$secrets_dir/private.pgp"
 
 	log "INFO" "Importing public PGP key"
-	sudo -u r3d5un gpg --import $secrets_dir/public.pgp
+	sudo -u r3d5un gpg --import "$secrets_dir/public.pgp"
 fi
 
 light_gray='\033[0m'
