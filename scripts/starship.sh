@@ -31,3 +31,4 @@ sudo -u r3d5un mkdir -p /home/r3d5un/.config
 
 log "INFO" "Stowing configuration"
 stow --verbose -d "$cwd/../dotfiles" -t "/home/r3d5un/.config/" starship
+
