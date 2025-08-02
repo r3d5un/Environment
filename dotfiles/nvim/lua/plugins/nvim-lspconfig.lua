@@ -60,6 +60,9 @@ return { -- LSP Configuration & Plugins
 				map("<leader>ch", vim.lsp.buf.hover, "[C]ode [H]over")
 				map("K", vim.lsp.buf.hover, "Hover Documentation")
 
+				-- Shows help for the signature of a function or method
+				map("<leader>sh", vim.lsp.buf.signature_help, "[S]ignature [H]elp")
+
 				-- WARN: This is not Goto Definition, this is Goto Declaration.
 				--  For example, in C this would take you to the header
 				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
