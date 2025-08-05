@@ -30,6 +30,10 @@ nnoremap <leader>wk <C-w>k
 let g:WhichKeyDesc_MoveToWindowRight = "<leader>wl Move To Right Window"
 nnoremap <leader>wl <C-w>l
 
+let g:WhichKeyDesc_ActivateProjectToolWindow = "<leader>e Activate Project Tool Window"
+map <leader>e <Action>(ActivateProjectToolWindow) " Use Shift+Escape to hide the Project Tool Window
+map <leader>d <Action>(ActivateDatabaseToolWindow) " Use Shift+Escape to hide the Database Tool Window
+
 "" Splitting windows
 map <C-w>v <Action>(SplitVertically)
 map <leader>wv <Action>(SplitVertically)
