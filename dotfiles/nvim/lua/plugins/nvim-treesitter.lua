@@ -33,6 +33,7 @@ return { -- Highlight, edit, and navigate code
 				"c_sharp",
 				"java",
 				"toml",
+				"vue",
 			},
 			-- Autoinstall languages that are not installed
 			auto_install = true,
