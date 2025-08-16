@@ -12,7 +12,7 @@ if [ -e "$font_path" ]; then
 	log "INFO" "$font_path already exists"
 else
 	log "INFO" "Downloading fonts"
-	curl -L -o $font_path https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Iosevka.zip
+	curl -L -o $font_path https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Iosevka.zip
 fi
 
 log "INFO" "Unpacking zipped directory"
