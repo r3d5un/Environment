@@ -38,7 +38,6 @@ sudo zypper --non-interactive install \
 	yazi \
 	lazygit \
 	bitwarden \
-	calibre \
 	discord \
 	foliate \
 	lutris \
