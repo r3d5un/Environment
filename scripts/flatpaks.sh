@@ -21,7 +21,8 @@ sudo flatpak install flathub -y \
 	org.torproject.torbrowser-launcher \
 	rest.insomnia.Insomnia \
 	us.zoom.Zoom \
-	com.calibre_ebook.calibre
+	com.calibre_ebook.calibre \
+	net.pcsx2.PCSX2
 
 sudo flatpak update -y
 
