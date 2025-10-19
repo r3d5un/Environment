@@ -38,7 +38,8 @@ sudo apt install -y \
 	curl \
 	ansible \
 	unzip \
-	stow
+	stow \
+	libtree-sitter-dev
 
 log "INFO" "Setting up Bash"
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/" bash
@@ -139,3 +140,9 @@ sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install google.golang.org/p
 
 log "INFO" "Stowing IdeaVim configuration"
 stow --verbose -d "$cwd/dotfiles" -t /home/r3d5un/ ideavim
+
+log "INFO" "Setting up Neovim"
+snap install nvim --classic
+sudo -u r3d5un mkdir -p /home/r3d5un/.config/nvim
+stow --verbose -d "$cwd/dotfiles" -t /home/r3d5un/.config/nvim/ nvim
+
