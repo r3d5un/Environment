@@ -146,3 +146,6 @@ snap install nvim --classic
 sudo -u r3d5un mkdir -p /home/r3d5un/.config/nvim
 stow --verbose -d "$cwd/dotfiles" -t /home/r3d5un/.config/nvim/ nvim
 
+log "INFO" "Setting up NVM"
+sudo -u r3d5un curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | sudo -u r3d5un bash
+
