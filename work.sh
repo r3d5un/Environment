@@ -189,3 +189,6 @@ log "INFO" "Setting up Starship"
 sudo -u r3d5un mkdir -p /home/r3d5un/.config
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/.config/" starship
 
+log "INFO" "Setting up Steam"
+sudo apt install -y steam-installer
+
