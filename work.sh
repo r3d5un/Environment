@@ -69,3 +69,22 @@ log "INFO" "Setting up .NET"
 sudo add-apt-repository ppa:dotnet/backports -y
 sudo apt update && sudo apt install -y dotnet-sdk-9.0
 
+log "INFO" "Setting up Flatpak and Flatpak Applications"
+sudo apt install flatpak -y
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+flatpak install flathub -y \
+	com.github.tchx84.Flatseal \
+	com.obsproject.Studio \
+	md.obsidian.Obsidian \
+	net.ankiweb.Anki \
+	org.qbittorrent.qBittorrent \
+	org.signal.Signal \
+	org.torproject.torbrowser-launcher \
+	rest.insomnia.Insomnia \
+	us.zoom.Zoom \
+	com.calibre_ebook.calibre \
+	net.pcsx2.PCSX2
+
+flatpak update -y
+
