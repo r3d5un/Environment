@@ -37,7 +37,8 @@ sudo apt install -y \
 	ca-certificates \
 	curl \
 	ansible \
-	unzip
+	unzip \
+	stow
 
 log "INFO" "Setting up Docker"
 sudo sudo install -m 0755 -d /etc/apt/keyrings
@@ -103,4 +104,13 @@ sudo unzip -o $font_path -d /usr/share/fonts/iosevka-nerd-font
 
 log "INFO" "Refreshing font cache"
 fc-cache -f
+
+log "INFO" "Setting up Ghostty"
+snap install ghostty --classic
+
+log "INFO" "Making configuration directory"
+sudo -u r3d5un mkdir -p /home/r3d5un/.config/ghostty
+
+log "INFO" "Stowing configuration"
+stow --verbose -d "$cwd/dotfiles" -t /home/r3d5un/.config/ghostty/ ghostty
 
