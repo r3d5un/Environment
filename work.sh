@@ -149,3 +149,35 @@ stow --verbose -d "$cwd/dotfiles" -t /home/r3d5un/.config/nvim/ nvim
 log "INFO" "Setting up NVM"
 sudo -u r3d5un curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | sudo -u r3d5un bash
 
+log "INFO" "Setting up Password Store"
+sudo apt install -y \
+	gnupg2 \
+	pass
+
+secrets_dir="$cwd/secrets"
+log "INFO" "Checking for PGP keys in $secrets_dir"
+if [[ ! -e "$secrets_dir/public.pgp" || ! -e "$secrets_dir/private.pgp" ]]; then
+	log "ERROR" "private or public key not found in $secrets_dir"
+	exit 1
+else
+	log "INFO" "Importing private PGP key"
+	sudo -u r3d5un gpg --import "$secrets_dir/private.pgp"
+
+	log "INFO" "Importing public PGP key"
+	sudo -u r3d5un gpg --import "$secrets_dir/public.pgp"
+fi
+
+light_gray='\033[0m'
+no_color='\033[0m'
+
+echo -e "\n\nIn order for password store to work you need to trust the key\n"
+echo -e "Run: ${light_gray}gpg --edit-key email@address.io${no_color}\n"
+echo -e "Run the trust command, e.g.\n"
+echo -e "${light_gray}gpg> trust${no_color}\n"
+echo -e "Set trust level to the highest possible (5) when prompted:\n"
+echo -e "${light_gray}Your decision? 5${no_color}\n"
+echo -e "Quit and save:\n"
+echo -e "${light_gray}quit${no_color}\n\n"
+
+sudo -u r3d5un pass
+
