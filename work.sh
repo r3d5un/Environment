@@ -137,3 +137,5 @@ sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install github.com/swaggo/s
 sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install golang.org/x/tools/go/analysis/passes/fieldalignment/cmd/fieldalignment@latest
 sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 
+log "INFO" "Stowing IdeaVim configuration"
+stow --verbose -d "$cwd/dotfiles" -t /home/r3d5un/ ideavim
