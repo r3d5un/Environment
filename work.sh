@@ -1,5 +1,8 @@
 #!/bin/bash
 
+cwd="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+source "$cwd/utils/utils.sh"
+
 require_root
 
 sudo apt update && sudo apt upgrade -y
@@ -61,3 +64,8 @@ sudo usermod -G docker -a r3d5un
 sudo systemctl restart docker
 
 docker run --rm hello-world
+
+log "INFO" "Setting up .NET"
+sudo add-apt-repository ppa:dotnet/backports -y
+sudo apt update && sudo apt install -y dotnet-sdk-9.0
+
