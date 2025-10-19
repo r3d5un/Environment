@@ -114,3 +114,23 @@ sudo -u r3d5un mkdir -p /home/r3d5un/.config/ghostty
 log "INFO" "Stowing configuration"
 stow --verbose -d "$cwd/dotfiles" -t /home/r3d5un/.config/ghostty/ ghostty
 
+log "INFO" "Installing Go"
+version="1.25.0"
+tarball=go$version.linux-amd64.tar.gz
+url=https://go.dev/dl/$tarball
+log "INFO" "Downloading Go $version: $tarball - $url"
+curl -L -o /tmp/$tarball $url
+
+log "INFO" "Installing Go"
+sudo rm -rf /usr/local/go && tar -C /usr/local -xzf /tmp/$tarball
+
+export PATH="/usr/local/go/bin:$PATH"
+
+sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install honnef.co/go/tools/cmd/staticcheck@latest
+sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install -tags 'postgres,sqlserver,mysql,mariadb' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install github.com/segmentio/golines@latest
+sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install github.com/air-verse/air@latest
+sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install github.com/swaggo/swag/cmd/swag@latest
+sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install golang.org/x/tools/go/analysis/passes/fieldalignment/cmd/fieldalignment@latest
+sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+
