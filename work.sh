@@ -36,7 +36,8 @@ sudo apt install -y \
 	fd-find \
 	ca-certificates \
 	curl \
-	ansible
+	ansible \
+	unzip
 
 log "INFO" "Setting up Docker"
 sudo sudo install -m 0755 -d /etc/apt/keyrings
@@ -87,4 +88,19 @@ flatpak install flathub -y \
 	net.pcsx2.PCSX2
 
 flatpak update -y
+
+log "INFO" "Installing Iosevka font"
+font_path=/tmp/iosevka.zip
+if [ -e "$font_path" ]; then
+	log "INFO" "$font_path already exists"
+else
+	log "INFO" "Downloading fonts"
+	curl -L -o $font_path https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Iosevka.zip
+fi
+
+log "INFO" "Unpacking zipped directory"
+sudo unzip -o $font_path -d /usr/share/fonts/iosevka-nerd-font
+
+log "INFO" "Refreshing font cache"
+fc-cache -f
 
