@@ -182,3 +182,6 @@ echo -e "${light_gray}quit${no_color}\n\n"
 
 sudo -u r3d5un pass
 
+log "INFO" "Setting up Rust"
+sudo -u r3d5un curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sudo -u r3d5un sh -s -- -y
+
