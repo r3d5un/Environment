@@ -40,6 +40,9 @@ sudo apt install -y \
 	unzip \
 	stow
 
+log "INFO" "Setting up Bash"
+stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/" bash
+
 log "INFO" "Setting up Docker"
 sudo sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
