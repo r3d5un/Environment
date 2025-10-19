@@ -39,7 +39,8 @@ sudo apt install -y \
 	ansible \
 	unzip \
 	stow \
-	libtree-sitter-dev
+	libtree-sitter-dev \
+	restic
 
 log "INFO" "Setting up Bash"
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/" bash
