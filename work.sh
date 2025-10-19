@@ -32,7 +32,8 @@ sudo apt install -y \
 	remmina \
 	fd-find \
 	ca-certificates \
-	curl
+	curl \
+	ansible
 
 log "INFO" "Setting up Docker"
 sudo sudo install -m 0755 -d /etc/apt/keyrings
