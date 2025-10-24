@@ -192,3 +192,6 @@ stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/.config/" starship
 log "INFO" "Setting up Steam"
 sudo apt install -y steam-installer
 
+log "INFO" "Setting up Kubernetes"
+sudo snap install microk8s --classic
+
