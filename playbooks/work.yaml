@@ -1,0 +1,79 @@
+- name: "Work Laptop Setup"
+  hosts: "development"
+  become: true
+  become_method: "sudo"
+  tasks:
+
+    - name: "Add Docker GPG apt Key"
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: "Add Docker Repository"
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu noble stable
+        state: present
+
+    - name: "Update all packages"
+      ansible.builtin.apt:
+        update_cache: true
+        upgrade: true
+
+    - name: "Install system packages"
+      ansible.builtin.apt:
+        state: present
+        pkg:
+        - btop
+        - make
+        - git
+        - gcc
+        - htop
+        - mpv
+        - pavucontrol
+        - ripgrep
+        - stow
+        - wine
+        - winetricks
+        - s3fs
+        - s3cmd
+        - keepassxc
+        - nextcloud-desktop
+        - zoxide
+        - fzf
+        - eza
+        - bat
+        - entr
+        - foliate
+        - lutris
+        - filezilla
+        - kamoso
+        - remmina
+        - fd-find
+        - ca-certificates
+        - curl
+        - ansible
+        - unzip
+        - stow
+        - libtree-sitter-dev
+        - restic
+        - curl
+        - ca-certificates
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+        - docker-buildx-plugin
+        - docker-compose-plugin
+        - snapd
+
+    - name: "Remove unwanted system packages"
+      ansible.builtin.apt:
+        state: absent
+        pkg:
+        - cowsay
+
+
+    - name: "Remove dependencies that are no longer required"
+      ansible.builtin.apt:
+        autoremove: yes
+        purge: yes
+
