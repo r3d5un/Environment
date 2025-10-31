@@ -91,7 +91,8 @@ flatpak install flathub -y \
 	rest.insomnia.Insomnia \
 	us.zoom.Zoom \
 	com.calibre_ebook.calibre \
-	net.pcsx2.PCSX2
+	net.pcsx2.PCSX2 \
+	com.bitwarden.desktop
 
 flatpak update -y
 
