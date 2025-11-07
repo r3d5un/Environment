@@ -71,9 +71,23 @@
         pkg:
         - cowsay
 
+    - name: "Enable Docker service"
+      ansible.builtin.systemd:
+        name: docker
+        enabled: yes
+        state: started
 
     - name: "Remove dependencies that are no longer required"
       ansible.builtin.apt:
-        autoremove: yes
-        purge: yes
+        autoremove: true
+        purge: true
 
+    - name: "Install Neovim"
+      comminity.general.snap:
+        classic: true
+        name: nvim
+
+    - name: "Install MicroK8s"
+      comminity.general.snap:
+        classic: true
+        name: microk8s
