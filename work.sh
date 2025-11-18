@@ -207,3 +207,11 @@ sudo sh -c "echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresq
 sudo apt update
 
 sudo apt install postgresql-18
+
+log "INFO" "Installing Grafana Alloy"
+wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/grafana.gpg > /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
+
+sudo apt update
+sudo apt install alloy
+
