@@ -92,7 +92,8 @@ flatpak install flathub -y \
 	us.zoom.Zoom \
 	com.calibre_ebook.calibre \
 	net.pcsx2.PCSX2 \
-	com.bitwarden.desktop
+	com.bitwarden.desktop \
+	org.fedoraproject.MediaWriter
 
 flatpak update -y
 
