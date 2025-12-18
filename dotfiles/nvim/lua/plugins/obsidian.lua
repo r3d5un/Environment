@@ -8,7 +8,6 @@ return {
 		"hrsh7th/nvim-cmp",
 		"nvim-telescope/telescope.nvim",
 		"nvim-treesitter/nvim-treesitter",
-		"MeanderingProgrammer/render-markdown.nvim",
 	},
 	opts = {
 		workspaces = {
