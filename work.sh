@@ -40,7 +40,13 @@ sudo apt install -y \
 	unzip \
 	stow \
 	libtree-sitter-dev \
-	restic
+	restic \
+	luarocks \
+	python3-pip \
+	openjdk-25-jdk-headless \
+	ruby \
+	php8.3-cli \
+	composer
 
 log "INFO" "Setting up Bash"
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/" bash
@@ -215,4 +221,10 @@ echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stab
 
 sudo apt update
 sudo apt install alloy
+
+log "INFO" "Installing Neovim dependencies"
+sudo snap install julia --classic
+
+log "INFO" "Installing Node Version Manager"
+sudo -u r3d5un curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | sudo -u r3d5un bash
 
