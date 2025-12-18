@@ -10,6 +10,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 	},
 	opts = {
+		legacy_commands = false,
 		workspaces = {
 			{
 				name = "Notes",
@@ -25,22 +26,6 @@ return {
 		completion = {
 			nvim_cmp = true,
 			min_chars = 1,
-		},
-		mappings = {
-			-- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-			["gf"] = {
-				action = function()
-					return require("obsidian").util.gf_passthrough()
-				end,
-				opts = { noremap = false, expr = true, buffer = true },
-			},
-			-- Toggle check-boxes.
-			["<leader>ch"] = {
-				action = function()
-					return require("obsidian").util.toggle_checkbox()
-				end,
-				opts = { buffer = true },
-			},
 		},
 		new_notes_location = "notes_subdir",
 		ui = {
