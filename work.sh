@@ -43,6 +43,7 @@ sudo apt install -y \
 	restic \
 	luarocks \
 	python3-pip \
+	python3-venv \
 	openjdk-25-jdk-headless \
 	ruby \
 	php8.3-cli \
