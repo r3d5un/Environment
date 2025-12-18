@@ -22,7 +22,6 @@ return { -- Highlight, edit, and navigate code
 				"cpp",
 				"javascript",
 				"typescript",
-				"latex",
 				"r",
 				"dockerfile",
 				"css",
