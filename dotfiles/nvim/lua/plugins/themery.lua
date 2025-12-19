@@ -3,7 +3,7 @@ return {
 	lazy = false,
 	config = function()
 		require("themery").setup({
-			themes = { "tokyonight-night", "tokyonight-storm", "tokyonight-day", "tokyonight-moon" },
+			themes = { "tokyonight-night", "tokyonight-storm", "tokyonight-day", "tokyonight-moon", "default" },
 			livePreview = true,
 		})
 	end,
