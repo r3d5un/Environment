@@ -19,11 +19,6 @@ return {
 			desc = "Diagnostics (Trouble)",
 		},
 		{
-			"<leader>xw",
-			"<cmd>Trouble workspace_diagnostics toggle<cr>",
-			desc = "Diagnostics (Trouble)",
-		},
-		{
 			"<leader>xX",
 			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
 			desc = "Buffer Diagnostics (Trouble)",
