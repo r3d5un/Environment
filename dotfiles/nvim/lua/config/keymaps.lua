@@ -26,7 +26,10 @@ map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 map("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-map("n", "<leader>bx", ":bdelete<cr>", { desc = "Delete Buffer" })
+-- The default :bdelete is annoying because it closes the window pane. This command fixes this issue
+-- by cycling to the previous buffer, then closing the buffer you were just on. This keeps the
+-- pane open, while closing the buffer.
+map("n", "<leader>bx", ":bp|bd #<cr>", { desc = "Delete Buffer" })
 map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
