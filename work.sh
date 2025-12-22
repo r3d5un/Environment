@@ -130,7 +130,7 @@ log "INFO" "Stowing configuration"
 stow --verbose -d "$cwd/dotfiles" -t /home/r3d5un/.config/ghostty/ ghostty
 
 log "INFO" "Installing Go"
-version="1.25.0"
+version="1.25.5"
 tarball=go$version.linux-amd64.tar.gz
 url=https://go.dev/dl/$tarball
 log "INFO" "Downloading Go $version: $tarball - $url"
