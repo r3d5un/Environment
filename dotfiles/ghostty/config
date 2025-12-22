@@ -2,7 +2,7 @@
 window-inherit-working-directory = true
 
 # Theme
-theme = tokyonight_night
+theme = TokyoNight Night
 font-family = IosevkaNerdFontMono
 font-size = 10.5
 font-feature = -calt
