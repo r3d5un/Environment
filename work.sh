@@ -48,7 +48,8 @@ sudo apt install -y \
 	openjdk-25-jdk-headless \
 	ruby \
 	php8.3-cli \
-	composer
+	composer \
+	mangohud
 
 log "INFO" "Setting up Bash"
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/" bash
