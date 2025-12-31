@@ -49,7 +49,8 @@ sudo apt install -y \
 	ruby \
 	php8.3-cli \
 	composer \
-	mangohud
+	mangohud \
+	openvpn
 
 log "INFO" "Setting up Bash"
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/" bash
