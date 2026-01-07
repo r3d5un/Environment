@@ -199,6 +199,7 @@ log "INFO" "Setting up Rust"
 sudo -u r3d5un curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sudo -u r3d5un sh -s -- -y
 
 log "INFO" "Setting up Starship"
+cargo install starship --locked
 sudo -u r3d5un mkdir -p /home/r3d5un/.config
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/.config/" starship
 
