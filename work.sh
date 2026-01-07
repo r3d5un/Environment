@@ -50,7 +50,8 @@ sudo apt install -y \
 	php8.3-cli \
 	composer \
 	mangohud \
-	openvpn
+	openvpn \
+	akregator
 
 log "INFO" "Setting up Bash"
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/" bash
