@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+ <head>
+  <text/>
+ </head>
+ <body>
+  <outline htmlUrl="https://ziglang.org/news/" type="rss" maxArticleNumber="1000" fetchInterval="30" faviconUrl="file:///home/r3d5un/.cache/favicons/ziglang.org.png" useCustomFetchInterval="false" text="Zig News" maxArticleAge="60" title="Zig News" archiveMode="globalDefault" id="3822289329" version="RSS" xmlUrl="https://ziglang.org/news/index.xml" description="Recent news" comment="News about the Zig programming language" copyright=""/>
+  <outline htmlUrl="https://www.postgresql.org/" type="rss" maxArticleNumber="1000" fetchInterval="30" faviconUrl="file:///home/r3d5un/.cache/favicons/www.postgresql.org.png" useCustomFetchInterval="false" text="PostgreSQL News" maxArticleAge="60" title="PostgreSQL News" archiveMode="globalDefault" id="2775718696" version="RSS" xmlUrl="https://www.postgresql.org/news/pgsql.rss" description="PostgreSQL news" comment="News from the primary PostgreSQL project" copyright=""/>
+  <outline htmlUrl="https://subsplease.org" type="rss" maxArticleNumber="1000" fetchInterval="30" faviconUrl="file:///home/r3d5un/.cache/favicons/subsplease.org.png" useCustomFetchInterval="false" text="SubsPlease" maxArticleAge="60" title="SubsPlease" archiveMode="globalDefault" id="452750384" version="RSS" xmlUrl="https://subsplease.org/rss/?t&amp;r=1080" description="RSS feed for SubsPlease releases (1080p)" comment="One stop shop for new anime" copyright=""/>
+  <outline htmlUrl="https://xkcd.com/" type="rss" maxArticleNumber="1000" fetchInterval="30" faviconUrl="file:///home/r3d5un/.cache/favicons/xkcd.com.png" useCustomFetchInterval="false" text="xkcd.com" maxArticleAge="60" title="xkcd.com" archiveMode="globalDefault" id="2361972950" version="RSS" xmlUrl="https://xkcd.com/atom.xml" description="" comment="" copyright=""/>
+  <outline htmlUrl="https://news.ycombinator.com/" type="rss" maxArticleNumber="1000" fetchInterval="30" faviconUrl="file:///home/r3d5un/.cache/favicons/news.ycombinator.com.png" useCustomFetchInterval="false" text="Hacker News" maxArticleAge="60" title="Hacker News" archiveMode="globalDefault" id="1486589370" version="RSS" xmlUrl="https://news.ycombinator.com/rss" description="Links for the intellectually curious, ranked by readers." comment="" copyright=""/>
+  <outline archiveMode="globalDefault" useCustomFetchInterval="false" maxArticleNumber="1000" version="RSS" logoHeight="114" logoWidth="114" text="NRK" htmlUrl="https://www.nrk.no/" fetchInterval="30" title="NRK" comment="Headline news from NRK" logoUrl="https://gfx.nrk.no/ZQa7ZMdrmZjV5uzIGBzl-wpLfS5fQrnZ2A7K39YPcXrA" copyright="" type="rss" maxArticleAge="60" xmlUrl="https://www.nrk.no/toppsaker.rss" faviconUrl="file:///home/r3d5un/.cache/favicons/www.nrk.no.png" id="478513530" description="Siste saker fra nrk.no"/>
+  <outline htmlUrl="https://seangoedecke.com" type="rss" maxArticleNumber="1000" fetchInterval="30" faviconUrl="file:///home/r3d5un/.cache/favicons/www.seangoedecke.com.png" useCustomFetchInterval="false" text="Sean Goedecke" maxArticleAge="60" title="Sean Goedecke" archiveMode="globalDefault" id="3846743475" version="RSS" xmlUrl="https://www.seangoedecke.com/rss.xml" description="Sean Goedecke's personal blog" comment="Software engineer writing about large company dynamics and AI" copyright=""/>
+ </body>
+</opml>
+
