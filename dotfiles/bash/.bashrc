@@ -2,6 +2,9 @@ PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'; PS1='\u@\h:\
 
 test -s ~/.alias && . ~/.alias || true
 
+# Load autocompletion scripts for bash
+source /etc/profile.d/bash_completion.sh
+
 export EDITOR=nvim
 export VISUAL=nvim
 
