@@ -2,4 +2,8 @@ all:
   hosts:
     localhost:
       ansible_connection: local
+    homelab:
+      ansible_host: 10.0.0.9
+      ansible_user: r3d5un
+      ansible_ssh_private_key: ~/.ssh/id_ed25519
 
