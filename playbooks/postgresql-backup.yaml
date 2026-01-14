@@ -1,0 +1,30 @@
+- name: "Backup PostgreSQL"
+  hosts: "homelab"
+  become: true
+  become_method: "sudo"
+  vars_files:
+    - /home/r3d5un/Environment/secrets/ansible-vars.yaml
+  vars:
+    pg_user: "postgres"
+    pg_backup_dir: "/mnt/storage/pg/basebackup"
+    pg_backup_name: "{{ ansible_date_time.iso8601_basic_short }}"
+
+  tasks:
+    - name: "Create base backup directory"
+      ansible.builtin.file:
+        path: "{{ pg_backup_dir }}"
+        state: "directory"
+        mode: "0750"
+        owner: "postgres"
+        group: "postgres"
+
+    - name: "Run pg_basebackup"
+      ansible.builtin.command: >
+        sudo -u postgres pg_basebackup
+        -U {{ pg_user }}
+        -D {{ pg_backup_dir }}/{{ pg_backup_name }}
+        -X stream
+        -P
+      environment:
+        PGPASSWORD: "{{ pg_password }}"
+
