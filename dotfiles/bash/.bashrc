@@ -55,3 +55,6 @@ eval "$(starship init bash)"
 # Zoxide
 eval "$(zoxide init --cmd cd bash)"
 
+# Ansible Vault
+export ANSIBLE_VAULT_PASSWORD_FILE=/home/r3d5un/Environment/secrets/ansible-vault-pass.txt
+
