@@ -1,0 +1,46 @@
+- name: "Install PostgreSQL"
+  hosts: "homelab"
+  become: true
+  become_method: "sudo"
+  tasks:
+    - name: "Installing dependencies"
+      ansible.builtin.apt:
+        state: "present"
+        update_cache: true
+        pkg:
+          - "curl"
+          - "ca-certificates"
+          - "gnupg"
+
+    - name: "Add PostgreSQL APT key"
+      ansible.builtin.apt_key:
+        url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
+        state: "present"
+
+    - name: "Add PostgreSQL APT Repository"
+      ansible.builtin.apt_repository:
+        repo: "deb http://apt.postgresql.org/pub/repos/apt {{ ansible_distribution_release }}-pgdg main"
+        state: "present"
+        filename: "pgdg"
+        update_cache: true
+
+    - name: "Install PostgreSQL 18"
+      ansible.builtin.apt:
+        state: "present"
+        update_cache: true
+        pkg:
+          - "postgresql-18"
+          - "postgresql-contrib"
+
+    - name: "Enable and Start PostgreSQL"
+      ansible.builtin.service:
+        name: "postgresql"
+        state: "started"
+        enabled: true
+
+    - name: "Configure Firewall for PostgreSQL"
+      community.general.ufw:
+        rule: "allow"
+        port: "5432"
+        proto: "tcp"
+
