@@ -1,0 +1,11 @@
+- name: "Update Jill Homelab"
+  hosts: "homelab"
+  become: true
+  become_method: "sudo"
+  tasks:
+    - name: "Update all packages"
+      ansible.builtin.apt:
+        update_cache: true
+        upgrade: "dist"
+        autoremove: true
+
