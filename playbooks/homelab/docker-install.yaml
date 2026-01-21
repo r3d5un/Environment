@@ -1,0 +1,47 @@
+- name: "Install Docker"
+  hosts: "homelab"
+  become: true
+  become_method: "sudo"
+  tasks:
+
+    - name: "Add Docker GPG apt Key"
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: "Add Docker Repository"
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu noble stable
+        state: present
+
+    - name: "Install system packages"
+      ansible.builtin.apt:
+        state: present
+        pkg:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+        - docker-buildx-plugin
+        - docker-compose-plugin
+
+    - name: "Create docker group"
+      ansible.builtin.group:
+        name: docker
+        state: present
+
+    - name: "Add user to docker group"
+      ansible.builtin.user:
+        name: "{{ ansible_user }}"
+        groups: docker
+        append: yes
+
+    - name: "Enable Docker service"
+      ansible.builtin.systemd:
+        name: docker
+        enabled: yes
+        state: started
+
+    - name: "Remove dependencies that are no longer required"
+      ansible.builtin.apt:
+        autoremove: true
+        purge: true
