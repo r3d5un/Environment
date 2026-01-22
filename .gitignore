@@ -6,3 +6,5 @@ dotfiles/tmux/plugins
 *.db-shm
 *.db-wal
 secrets/ansible-*
+kube/*-secret.yaml
+
