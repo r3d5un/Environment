@@ -105,7 +105,8 @@ flatpak install flathub -y \
 	com.calibre_ebook.calibre \
 	net.pcsx2.PCSX2 \
 	com.bitwarden.desktop \
-	org.fedoraproject.MediaWriter
+	org.fedoraproject.MediaWriter \
+	flathub org.kde.krename
 
 flatpak update -y
 
