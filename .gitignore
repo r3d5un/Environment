@@ -7,4 +7,5 @@ dotfiles/tmux/plugins
 *.db-wal
 secrets/ansible-*
 kube/*-secret.yaml
+.idea
 
