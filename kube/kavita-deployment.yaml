@@ -1,0 +1,128 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kavita
+  labels:
+    app: kavita
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: kavita
+  name: kavita-config-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: homelab-hdd
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: kavita
+  name: kavita-manga-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: homelab-hdd
+  resources:
+    requests:
+      storage: 100Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: kavita
+  name: kavita-comics-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: homelab-hdd
+  resources:
+    requests:
+      storage: 100Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: kavita
+  name: kavita-books-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: homelab-hdd
+  resources:
+    requests:
+      storage: 100Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kavita
+  namespace: kavita
+  labels:
+    app: kavita
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kavita
+  template:
+    metadata:
+      labels:
+        app: kavita
+    spec:
+      containers:
+      - name: kavita
+        image: ghcr.io/kareadita/kavita:0.8.9
+        env:
+        - name: TZ
+          value: "Europe/Oslo"
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+        - name: config-volume
+          mountPath: /kavita/config
+        - name: manga-volume
+          mountPath: /manga
+        - name: comics-volume
+          mountPath: /comics
+        - name: books-volume
+          mountPath: /books
+      volumes:
+      - name: config-volume
+        persistentVolumeClaim:
+          claimName: kavita-config-pvc
+      - name: manga-volume
+        persistentVolumeClaim:
+          claimName: kavita-manga-pvc
+      - name: comics-volume
+        persistentVolumeClaim:
+          claimName: kavita-comics-pvc
+      - name: books-volume
+        persistentVolumeClaim:
+          claimName: kavita-books-pvc
+      resources:
+        limits:
+          memory: "4Gi"
+          cpu: "2"
+        requests:
+          memory: "1Gi"
+          cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: kavita
+  name: kavita-service
+spec:
+  selector:
+    app: kavita
+  ports:
+    - nodePort: 31190
+      port: 5000
+      targetPort: 5000
+  type: NodePort
+
