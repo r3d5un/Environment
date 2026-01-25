@@ -106,7 +106,8 @@ flatpak install flathub -y \
 	net.pcsx2.PCSX2 \
 	com.bitwarden.desktop \
 	org.fedoraproject.MediaWriter \
-	flathub org.kde.krename
+	flathub org.kde.krename \
+	io.gitlab.news_flash.NewsFlash
 
 flatpak update -y
 
