@@ -52,7 +52,8 @@ sudo apt install -y \
 	composer \
 	mangohud \
 	openvpn \
-	akregator
+	akregator \
+	age
 
 log "INFO" "Setting up Bash"
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/" bash
