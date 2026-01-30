@@ -261,3 +261,9 @@ curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/noble.tailscale-keyring.list
 sudo apt update
 sudo apt install tailscale
 
+log "INFO" "Installing SOPS"
+sudo -u r3d5un mkdir -p /home/r3d5un/.local/bin/sops && \
+	sudo -u r3d5un curl -Lo /home/r3d5un/.local/bin/sops/sops https://github.com/getsops/sops/releases/download/v3.11.0/sops-v3.11.0.linux.amd64 && \
+	sudo -u r3d5un chmod +x /home/r3d5un/.local/bin/sops/sops && \
+	sudo -u r3d5un chown -R r3d5un:r3d5un /home/r3d5un/.local/bin/sops
+
