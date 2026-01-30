@@ -8,4 +8,5 @@ dotfiles/tmux/plugins
 secrets/ansible-*
 kube/*-secret.yaml
 .idea
+secrets/age-key.txt
 
