@@ -8,6 +8,7 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: mssql
   name: mssql-deployment
 spec:
   replicas: 1
@@ -59,6 +60,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
+  namespace: mssql
   name: mssql-pvc
 spec:
   storageClassName: homelab
@@ -68,6 +70,7 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 metadata:
+  namespace: mssql
   name: mssql-configmap
   labels:
     app: mssql
@@ -78,6 +81,7 @@ data:
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: mssql
   name: mssql
 spec:
   type: NodePort
@@ -91,6 +95,7 @@ spec:
 apiVersion: v1
 kind: Secret
 metadata:
+  namespace: mssql
   name: mssql-secrets
 type: Opaque
 data:
