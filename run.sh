@@ -7,36 +7,10 @@ require_root
 
 log "INFO" "Updating system"
 ansible-playbook -i hosts.yaml playbooks/workstation/update.yaml --limit localhost --become
+ansible-playbook -i hosts.yaml playbooks/homelab/docker-install.yaml --limit localhost --become
 
 log "INFO" "Setting up Bash"
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/" bash
-
-log "INFO" "Setting up Docker"
-sudo sudo install -m 0755 -d /etc/apt/keyrings
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-sudo chmod a+r /etc/apt/keyrings/docker.asc
-
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-sudo apt update
-
-sudo apt install -y \
-	docker-ce \
-	docker-ce-cli \
-	containerd.io \
-	docker-buildx-plugin \
-	docker-compose-plugin
-
-sudo systemctl enable --now docker
-
-sudo usermod -G docker -a r3d5un
-
-sudo systemctl restart docker
-
-docker run --rm hello-world
 
 log "INFO" "Setting up .NET"
 sudo add-apt-repository ppa:dotnet/backports -y
