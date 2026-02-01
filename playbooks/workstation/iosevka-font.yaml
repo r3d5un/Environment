@@ -1,0 +1,33 @@
+- name: Install Iosevka Nerd Font
+  hosts: localhost
+  become: yes
+  vars:
+    font_url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Iosevka.zip"
+    font_path: "/tmp/iosevka.zip"
+    font_dir: "/usr/share/fonts/iosevka-nerd-font"
+
+  tasks:
+    - name: Download Iosevka Nerd Font
+      ansible.builtin.get_url:
+        url: "{{ font_url }}"
+        dest: "{{ font_path }}"
+        mode: '0644'
+      register: download_result
+
+    - name: Create font directory
+      ansible.builtin.file:
+        path: "{{ font_dir }}"
+        state: directory
+        mode: '0755'
+
+    - name: Unpack Iosevka Nerd Font
+      ansible.builtin.unarchive:
+        src: "{{ font_path }}"
+        dest: "{{ font_dir }}"
+        remote_src: yes
+        creates: "{{ font_dir }}/IosevkaNerdFont-Regular.ttf"
+
+    - name: Refresh font cache
+      ansible.builtin.command: fc-cache -f
+      changed_when: false
+

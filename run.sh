@@ -9,25 +9,10 @@ log "INFO" "Updating system"
 ansible-playbook -i hosts.yaml playbooks/workstation/update.yaml --limit localhost --become
 ansible-playbook -i hosts.yaml playbooks/homelab/docker-install.yaml --limit localhost --become
 ansible-playbook -i hosts.yaml playbooks/workstation/install-dotnet.yaml --limit localhost --become
+ansible-playbook -i hosts.yaml playbooks/workstation/iosevka-font.yaml --limit localhost --become
 
 log "INFO" "Setting up Bash"
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/" bash
-
-log "INFO" "Installing Iosevka font"
-font_path=/tmp/iosevka.zip
-if [ -e "$font_path" ]; then
-	log "INFO" "$font_path already exists"
-else
-	log "INFO" "Downloading fonts"
-	curl -L -o $font_path https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Iosevka.zip
-fi
-
-log "INFO" "Unpacking zipped directory"
-sudo unzip -o $font_path -d /usr/share/fonts/iosevka-nerd-font
-
-log "INFO" "Refreshing font cache"
-fc-cache -f
-
 
 log "INFO" "Making configuration directory"
 sudo -u r3d5un mkdir -p /home/r3d5un/.config/ghostty
