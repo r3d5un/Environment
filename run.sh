@@ -52,7 +52,7 @@ sudo apt install -y \
 	composer \
 	mangohud \
 	openvpn \
-	akregator \
+	kaddressbook \
 	age
 
 log "INFO" "Setting up Bash"
