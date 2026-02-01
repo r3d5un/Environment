@@ -70,18 +70,6 @@ cargo install starship --locked
 sudo -u r3d5un mkdir -p /home/r3d5un/.config
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/.config/" starship
 
-log "INFO" "Installing PostgreSQL"
-sudo apt install curl ca-certificates
-sudo install -d /usr/share/postgresql-common/pgdg
-sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
-
-. /etc/os-release
-sudo sh -c "echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $VERSION_CODENAME-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
-
-sudo apt update
-
-sudo apt install postgresql-18
-
 log "INFO" "Installing Grafana Alloy"
 wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/grafana.gpg > /dev/null
 echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
