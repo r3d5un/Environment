@@ -5,54 +5,8 @@ source "$cwd/utils/utils.sh"
 
 require_root
 
-sudo apt update && sudo apt upgrade -y
-
 log "INFO" "Updating system"
-sudo apt install -y \
-	btop \
-	make \
-	bash-completion \
-	git \
-	gcc \
-	htop \
-	mpv \
-	pavucontrol \
-	ripgrep \
-	wine \
-	winetricks \
-	s3fs \
-	s3cmd \
-	keepassxc \
-	nextcloud-desktop \
-	zoxide \
-	fzf \
-	eza \
-	bat \
-	entr \
-	foliate \
-	lutris \
-	filezilla \
-	kamoso \
-	remmina \
-	fd-find \
-	ca-certificates \
-	curl \
-	ansible \
-	unzip \
-	stow \
-	libtree-sitter-dev \
-	restic \
-	luarocks \
-	python3-pip \
-	python3-venv \
-	openjdk-25-jdk-headless \
-	ruby \
-	php8.3-cli \
-	composer \
-	mangohud \
-	openvpn \
-	kaddressbook \
-	age
+ansible-playbook -i hosts.yaml playbooks/workstation/update.yaml --limit localhost --become
 
 log "INFO" "Setting up Bash"
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/" bash
@@ -87,29 +41,6 @@ docker run --rm hello-world
 log "INFO" "Setting up .NET"
 sudo add-apt-repository ppa:dotnet/backports -y
 sudo apt update && sudo apt install -y dotnet-sdk-9.0
-
-log "INFO" "Setting up Flatpak and Flatpak Applications"
-sudo apt install flatpak -y
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
-flatpak install flathub -y \
-	com.github.tchx84.Flatseal \
-	com.obsproject.Studio \
-	md.obsidian.Obsidian \
-	net.ankiweb.Anki \
-	org.qbittorrent.qBittorrent \
-	org.signal.Signal \
-	org.torproject.torbrowser-launcher \
-	rest.insomnia.Insomnia \
-	us.zoom.Zoom \
-	com.calibre_ebook.calibre \
-	net.pcsx2.PCSX2 \
-	com.bitwarden.desktop \
-	org.fedoraproject.MediaWriter \
-	flathub org.kde.krename \
-	io.gitlab.news_flash.NewsFlash
-
-flatpak update -y
 
 log "INFO" "Installing Iosevka font"
 font_path=/tmp/iosevka.zip
