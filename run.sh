@@ -18,7 +18,6 @@ sudo apt install -y \
 	mpv \
 	pavucontrol \
 	ripgrep \
-	stow \
 	wine \
 	winetricks \
 	s3fs \
