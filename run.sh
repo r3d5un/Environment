@@ -12,25 +12,15 @@ ansible-playbook -i hosts.yaml playbooks/workstation/install-dotnet.yaml --limit
 ansible-playbook -i hosts.yaml playbooks/workstation/install-go.yaml --limit localhost --become
 ansible-playbook -i hosts.yaml playbooks/workstation/iosevka-font.yaml --limit localhost --become
 
-log "INFO" "Setting up Bash"
+log "INFO" "Stowing configurations"
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/" bash
-
-log "INFO" "Making configuration directory"
 sudo -u r3d5un mkdir -p /home/r3d5un/.config/ghostty
-
-log "INFO" "Stowing configuration"
 stow --verbose -d "$cwd/dotfiles" -t /home/r3d5un/.config/ghostty/ ghostty
+stow --verbose -d "$cwd/dotfiles" -t /home/r3d5un/ ideavim
+sudo -u r3d5un mkdir -p /home/r3d5un/.config/nvim
+stow --verbose -d "$cwd/dotfiles" -t /home/r3d5un/.config/nvim/ nvim
 
-log "INFO" "Installing Go"
-version="1.25.5"
-tarball=go$version.linux-amd64.tar.gz
-url=https://go.dev/dl/$tarball
-log "INFO" "Downloading Go $version: $tarball - $url"
-curl -L -o /tmp/$tarball $url
-
-log "INFO" "Installing Go"
-sudo rm -rf /usr/local/go && tar -C /usr/local -xzf /tmp/$tarball
-
+log "INFO" "Installing Go tooling"
 export PATH="/usr/local/go/bin:$PATH"
 
 sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install honnef.co/go/tools/cmd/staticcheck@latest
@@ -41,21 +31,10 @@ sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install github.com/swaggo/s
 sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install golang.org/x/tools/go/analysis/passes/fieldalignment/cmd/fieldalignment@latest
 sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 
-log "INFO" "Stowing IdeaVim configuration"
-stow --verbose -d "$cwd/dotfiles" -t /home/r3d5un/ ideavim
-
-log "INFO" "Setting up Neovim"
-sudo -u r3d5un mkdir -p /home/r3d5un/.config/nvim
-stow --verbose -d "$cwd/dotfiles" -t /home/r3d5un/.config/nvim/ nvim
-
 log "INFO" "Setting up NVM"
 sudo -u r3d5un curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | sudo -u r3d5un bash
 
 log "INFO" "Setting up Password Store"
-sudo apt install -y \
-	gnupg2 \
-	pass
-
 secrets_dir="$cwd/secrets"
 log "INFO" "Checking for PGP keys in $secrets_dir"
 if [[ ! -e "$secrets_dir/public.pgp" || ! -e "$secrets_dir/private.pgp" ]]; then
