@@ -1,18 +1,22 @@
 - name: "Install Docker"
-  hosts: "homelab"
+  hosts: "all"
   become: true
   become_method: "sudo"
   tasks:
 
-    - name: "Add Docker GPG apt Key"
-      apt_key:
+    - name: "Download Docker GPG apt Key"
+      ansible.builtin.get_url:
         url: https://download.docker.com/linux/ubuntu/gpg
-        state: present
+        dest: /etc/apt/keyrings/docker.asc
+        mode: '0644'
+        force: true
 
     - name: "Add Docker Repository"
       apt_repository:
-        repo: deb https://download.docker.com/linux/ubuntu noble stable
+        repo: "deb [arch={{ ansible_architecture | lower }} signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu noble stable"
         state: present
+        filename: docker
+        update_cache: true
 
     - name: "Install system packages"
       ansible.builtin.apt:
@@ -31,7 +35,7 @@
 
     - name: "Add user to docker group"
       ansible.builtin.user:
-        name: "{{ ansible_user }}"
+        name: "r3d5un"
         groups: docker
         append: yes
 
@@ -45,3 +49,4 @@
       ansible.builtin.apt:
         autoremove: true
         purge: true
+
