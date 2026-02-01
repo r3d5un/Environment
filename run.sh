@@ -28,8 +28,6 @@ sudo unzip -o $font_path -d /usr/share/fonts/iosevka-nerd-font
 log "INFO" "Refreshing font cache"
 fc-cache -f
 
-log "INFO" "Setting up Ghostty"
-snap install ghostty --classic
 
 log "INFO" "Making configuration directory"
 sudo -u r3d5un mkdir -p /home/r3d5un/.config/ghostty
@@ -61,7 +59,6 @@ log "INFO" "Stowing IdeaVim configuration"
 stow --verbose -d "$cwd/dotfiles" -t /home/r3d5un/ ideavim
 
 log "INFO" "Setting up Neovim"
-snap install nvim --classic
 sudo -u r3d5un mkdir -p /home/r3d5un/.config/nvim
 stow --verbose -d "$cwd/dotfiles" -t /home/r3d5un/.config/nvim/ nvim
 
@@ -111,9 +108,6 @@ stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/.config/" starship
 log "INFO" "Setting up Steam"
 sudo apt install -y steam-installer
 
-log "INFO" "Setting up Kubernetes"
-sudo snap install microk8s --classic
-
 log "INFO" "Installing PostgreSQL"
 sudo apt install curl ca-certificates
 sudo install -d /usr/share/postgresql-common/pgdg
@@ -132,9 +126,6 @@ echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stab
 
 sudo apt update
 sudo apt install alloy
-
-log "INFO" "Installing Neovim dependencies"
-sudo snap install julia --classic
 
 log "INFO" "Installing Node Version Manager"
 sudo -u r3d5un curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | sudo -u r3d5un bash
