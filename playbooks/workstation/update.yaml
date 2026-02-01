@@ -65,6 +65,8 @@
         - openvpn
         - kaddressbook
         - age
+        - gnupg2
+        - pass
 
     - name: "Remove unwanted system packages"
       ansible.builtin.apt:
