@@ -67,6 +67,7 @@
         - age
         - gnupg2
         - pass
+        - steam-installer
 
     - name: "Remove unwanted system packages"
       ansible.builtin.apt:
