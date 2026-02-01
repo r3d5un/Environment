@@ -1,0 +1,134 @@
+- name: "Install Packages and Perform System Updates"
+  hosts: localhost
+  become: true
+  become_method: "sudo"
+  tasks:
+
+    - name: "Update system packages"
+      ansible.builtin.apt:
+        update_cache: true
+        upgrade: true
+
+    - name: "Install wanted packages"
+      ansible.builtin.apt:
+        state: present
+        pkg:
+        - btop
+        - make
+        - git
+        - gcc
+        - htop
+        - mpv
+        - pavucontrol
+        - ripgrep
+        - wine
+        - winetricks
+        - s3fs
+        - s3cmd
+        - keepassxc
+        - nextcloud-desktop
+        - zoxide
+        - fzf
+        - eza
+        - bat
+        - entr
+        - foliate
+        - lutris
+        - filezilla
+        - kamoso
+        - remmina
+        - fd-find
+        - ca-certificates
+        - curl
+        - ansible
+        - unzip
+        - stow
+        - libtree-sitter-dev
+        - restic
+        - ca-certificates
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+        - docker-buildx-plugin
+        - docker-compose-plugin
+        - snapd
+        - alloy
+        - bash-completion
+        - luarocks
+        - python3-pip
+        - python3-venv
+        - openjdk-25-jdk-headless
+        - ruby
+        - php8.3-cli
+        - composer
+        - mangohud
+        - openvpn
+        - kaddressbook
+        - age
+
+    - name: "Remove unwanted system packages"
+      ansible.builtin.apt:
+        state: absent
+        pkg:
+        - cowsay
+        - akregator
+        - kontact
+
+    - name: Add Flathub Repository
+      community.general.flatpak_remote:
+        name: flathub
+        state: present
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+        method: user
+
+    - name: "Install wanted flatpaks"
+      community.general.flatpak:
+        state: present
+        name:
+        - com.github.tchx84.Flatseal
+        - com.obsproject.Studio
+        - md.obsidian.Obsidian
+        - net.ankiweb.Anki
+        - org.qbittorrent.qBittorrent
+        - org.signal.Signal
+        - org.torproject.torbrowser-launcher
+        - rest.insomnia.Insomnia
+        - us.zoom.Zoom
+        - com.calibre_ebook.calibre
+        - net.pcsx2.PCSX2
+        - com.bitwarden.desktop
+        - org.fedoraproject.MediaWriter
+        - org.kde.krename
+        - io.gitlab.news_flash.NewsFlash
+
+    - name: "Remove unwanted flatpaks"
+      community.general.flatpak:
+        state: absent
+        name:
+        - org.gnome.Contacts
+
+    - name: "Install wanted snap packages"
+      community.general.snap:
+        classic: true
+        state: present
+        name: []
+
+    - name: "Install wanted classic snap packages"
+      community.general.snap:
+        classic: true
+        state: present
+        name:
+          - ghostty
+          - nvim
+          - microk8s
+          - julia
+
+    - name: "Remove unwanted snap packages"
+      community.general.snap:
+        classic: true
+        state: absent
+        name: []
+
+
+
+
