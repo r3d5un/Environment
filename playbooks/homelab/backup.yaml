@@ -1,0 +1,16 @@
+- name: "Update Jill Homelab"
+  hosts: "homelab"
+  become: true
+  become_method: "sudo"
+  vars:
+    backup_paths:
+      - "/mnt/storage"
+      - "/var/lib/microk8s/storage"
+  tasks:
+
+    - name: "Install restic"
+      ansible.builtin.apt:
+        state: present
+        pkg:
+        - restic
+
