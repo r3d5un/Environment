@@ -5,6 +5,9 @@ source "$cwd/utils/utils.sh"
 
 require_root
 
+log "INFO" "Installing Ansible"
+sudo apt update && sudo apt install ansible
+
 log "INFO" "Updating system"
 ansible-playbook -i hosts.yaml playbooks/workstation/update.yaml --limit localhost --become
 ansible-playbook -i hosts.yaml playbooks/homelab/docker-install.yaml --limit localhost --become
