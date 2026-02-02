@@ -59,5 +59,8 @@ eval "$(zoxide init --cmd cd bash)"
 export ANSIBLE_VAULT_PASSWORD_FILE=/home/r3d5un/Environment/secrets/ansible-vault-pass.txt
 export ANSIBLE_BECOME_PASSWORD=$(cat /home/r3d5un/Environment/secrets/ansible-vault-pass.txt)
 
+# SOPS
+export SOPS_AGE_KEY=$(cat /home/r3d5un/Environment/secrets/age-key.txt)
+
 # SOPS - Secrets OPerationS
 export PATH=$PATH:"$HOME/.local/bin/sops:$PATH"
