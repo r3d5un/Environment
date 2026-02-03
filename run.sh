@@ -75,13 +75,6 @@ cargo install starship --locked
 sudo -u r3d5un mkdir -p /home/r3d5un/.config
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/.config/" starship
 
-log "INFO" "Installing Grafana Alloy"
-wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/grafana.gpg > /dev/null
-echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
-
-sudo apt update
-sudo apt install alloy
-
 log "INFO" "Installing Node Version Manager"
 sudo -u r3d5un curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | sudo -u r3d5un bash
 
