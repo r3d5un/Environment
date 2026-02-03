@@ -5,6 +5,8 @@ source "$cwd/utils/utils.sh"
 
 require_root
 
+set -e
+
 log "INFO" "Installing Ansible"
 sudo apt update && sudo apt install ansible
 
