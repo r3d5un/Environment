@@ -1,19 +1,26 @@
 - name: Install .NET SDK
   hosts: "localhost"
   become: true
-  become_method: "sudo"
   tasks:
+    - name: Ensure /etc/apt/keyrings directory exists
+      ansible.builtin.file:
+        path: /etc/apt/keyrings
+        state: directory
+        mode: '0755'
 
     - name: Add Microsoft package signing key
-      ansible.builtin.apt_key:
+      ansible.builtin.get_url:
         url: https://packages.microsoft.com/keys/microsoft.asc
-        state: present
+        dest: /etc/apt/keyrings/microsoft.gpg
+        mode: '0644'
+        force: yes
 
     - name: Add .NET repository
       ansible.builtin.apt_repository:
-        repo: "deb [arch=amd64] https://packages.microsoft.com/ubuntu/{{ ansible_distribution_version }}/prod {{ ansible_distribution_release }} main"
+        repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/{{ ansible_distribution_version }}/prod {{ ansible_distribution_release }} main"
         state: present
         filename: microsoft-prod.list
+        update_cache: no
 
     - name: Update apt package index
       ansible.builtin.apt:
@@ -23,4 +30,3 @@
       ansible.builtin.apt:
         name: dotnet-sdk-9.0
         state: present
-

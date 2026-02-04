@@ -13,7 +13,6 @@ sudo apt update && sudo apt install ansible
 log "INFO" "Updating system"
 ansible-playbook -i hosts.yaml playbooks/workstation/update.yaml --limit localhost --become
 ansible-playbook -i hosts.yaml playbooks/homelab/docker-install.yaml --limit localhost --become
-ansible-playbook -i hosts.yaml playbooks/workstation/install-dotnet.yaml --limit localhost --become
 ansible-playbook -i hosts.yaml playbooks/workstation/install-go.yaml --limit localhost --become
 ansible-playbook -i hosts.yaml playbooks/workstation/iosevka-font.yaml --limit localhost --become
 
