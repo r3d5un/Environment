@@ -16,6 +16,7 @@ ansible-playbook -i hosts.yaml playbooks/homelab/docker-install.yaml --limit loc
 ansible-playbook -i hosts.yaml playbooks/workstation/install-go.yaml --limit localhost --become
 ansible-playbook -i hosts.yaml playbooks/workstation/iosevka-font.yaml --limit localhost --become
 ansible-playbook -i hosts.yaml playbooks/workstation/install-mullvad.yaml --limit localhost --become
+ansible-playbook -i hosts.yaml playbooks/workstation/install-kubectl.yaml --limit localhost --become
 
 log "INFO" "Stowing configurations"
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/" bash
