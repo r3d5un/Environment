@@ -1,0 +1,47 @@
+- name: Install Mullvad VPN client
+  hosts: all
+  become: yes
+  vars:
+    mullvad_keyring_url: "https://repository.mullvad.net/deb/mullvad-keyring.asc"
+    mullvad_repo_url: "https://repository.mullvad.net/deb/stable"
+    mullvad_repo_distro: "stable"
+    mullvad_repo_component: "main"
+    mullvad_arch: >-
+      {% if ansible_architecture == 'x86_64' -%}
+        amd64
+      {%- elif ansible_architecture == 'aarch64' -%}
+        arm64
+      {%- else -%}
+        {{ ansible_architecture }}
+      {%- endif %}
+
+  tasks:
+    - name: Install required packages
+      ansible.builtin.apt:
+        name:
+          - curl
+          - gnupg
+          - apt-transport-https
+        state: present
+        update_cache: yes
+
+    - name: Add Mullvad VPN keyring
+      ansible.builtin.get_url:
+        url: "{{ mullvad_keyring_url }}"
+        dest: /usr/share/keyrings/mullvad-keyring.asc
+        mode: '0644'
+        force: no
+
+    - name: Add Mullvad VPN repository
+      ansible.builtin.apt_repository:
+        repo: "deb [signed-by=/usr/share/keyrings/mullvad-keyring.asc arch={{ mullvad_arch }}] {{ mullvad_repo_url }} {{ mullvad_repo_distro }} {{ mullvad_repo_component }}"
+        state: present
+        filename: mullvad
+        update_cache: yes
+
+    - name: Install Mullvad VPN client
+      ansible.builtin.apt:
+        name: mullvad-vpn
+        state: present
+        update_cache: yes
+

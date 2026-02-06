@@ -15,6 +15,7 @@ ansible-playbook -i hosts.yaml playbooks/workstation/update.yaml --limit localho
 ansible-playbook -i hosts.yaml playbooks/homelab/docker-install.yaml --limit localhost --become
 ansible-playbook -i hosts.yaml playbooks/workstation/install-go.yaml --limit localhost --become
 ansible-playbook -i hosts.yaml playbooks/workstation/iosevka-font.yaml --limit localhost --become
+ansible-playbook -i hosts.yaml playbooks/workstation/install-mullvad.yaml --limit localhost --become
 
 log "INFO" "Stowing configurations"
 stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/" bash
@@ -76,12 +77,6 @@ stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/.config/" starship
 
 log "INFO" "Installing Node Version Manager"
 sudo -u r3d5un curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | sudo -u r3d5un bash
-
-log "INFO" "Installing Mullvad VPN"
-sudo curl -fsSLo /usr/share/keyrings/mullvad-keyring.asc https://repository.mullvad.net/deb/mullvad-keyring.asc
-echo "deb [signed-by=/usr/share/keyrings/mullvad-keyring.asc arch=$( dpkg --print-architecture )] https://repository.mullvad.net/deb/stable stable main" | sudo tee /etc/apt/sources.list.d/mullvad.list
-sudo apt update
-sudo apt install mullvad-vpn
 
 log "INFO" "Installing Tailscale"
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/noble.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
