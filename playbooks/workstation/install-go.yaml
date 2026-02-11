@@ -2,7 +2,7 @@
   hosts: localhost
   become: yes
   vars:
-    go_version: "1.25.5"
+    go_version: "1.26.0"
     go_tarball: "go{{ go_version }}.linux-amd64.tar.gz"
     go_url: "https://go.dev/dl/{{ go_tarball }}"
     go_install_dir: "/usr/local/go"
