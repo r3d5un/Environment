@@ -102,6 +102,7 @@
         - org.fedoraproject.MediaWriter
         - org.kde.krename
         - io.gitlab.news_flash.NewsFlash
+        - org.squidowl.halloy
 
     - name: "Remove unwanted flatpaks"
       community.general.flatpak:
