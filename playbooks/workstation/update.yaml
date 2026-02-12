@@ -62,6 +62,7 @@
         - gnupg2
         - pass
         - steam-installer
+        - quassel-client
 
     - name: "Remove unwanted system packages"
       ansible.builtin.apt:
