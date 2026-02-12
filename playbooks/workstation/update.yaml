@@ -110,6 +110,7 @@
         name:
         - org.gnome.Contacts
         - org.squidowl.halloy
+        - org.nicotine_plus.Nicotine
 
     - name: "Install wanted snap packages"
       community.general.snap:
