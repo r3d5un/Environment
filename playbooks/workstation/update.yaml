@@ -63,6 +63,7 @@
         - pass
         - steam-installer
         - quassel-client
+        - graphviz
 
     - name: "Remove unwanted system packages"
       ansible.builtin.apt:
