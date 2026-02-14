@@ -9,4 +9,5 @@ secrets/ansible-*
 kube/*-secret.yaml
 .idea
 secrets/age-key.txt
+secrets/kubectl-config.yaml
 
