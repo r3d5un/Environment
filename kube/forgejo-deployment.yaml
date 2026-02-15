@@ -32,6 +32,7 @@ data:
   FORGEJO__database__HOST: "10.0.0.9"
   FORGEJO__database__NAME: "forgejo"
   FORGEJO__database__USER: "forgejo"
+  FORGEJO__server__ROOT_URL: "http://jill/forgejo/"
 ---
 apiVersion: v1
 kind: Service
