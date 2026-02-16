@@ -97,10 +97,6 @@ map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { noremap = true, silent = true, 
 map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { noremap = true, silent = true, desc = "tmux window up" })
 map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { noremap = true, silent = true, desc = "tmux window right" })
 
--- Diagnostics
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
-
 -- Kulala HTTP Client
 
 vim.api.nvim_set_keymap(
