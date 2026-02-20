@@ -32,7 +32,7 @@ return {
 			enable = false,
 		},
 		attachments = {
-			img_folder = "imgs",
+			folder = "imgs",
 		},
 		note_id_func = function(title)
 			local suffix = ""
