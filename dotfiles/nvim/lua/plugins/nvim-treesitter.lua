@@ -1,10 +1,9 @@
-return { -- Highlight, edit, and navigate code
+return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
+	event = { "BufReadPost", "BufNewFile" },
 	cmd = { "TSUpdate", "TSInstall", "TSLog", "TSUninstall" },
 	opts = {
-		indent = { enable = true },
-		highlight = { enable = true },
 		ensure_installed = {
 			"bash",
 			"c",
@@ -34,5 +33,9 @@ return { -- Highlight, edit, and navigate code
 			"toml",
 			"vue",
 		},
+		auto_install = true,
+		highlight = { enable = true },
+		indent = { enable = true },
+		folds = { enable = true },
 	},
 }

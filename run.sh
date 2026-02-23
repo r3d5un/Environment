@@ -71,13 +71,13 @@ sudo -u r3d5un pass
 log "INFO" "Setting up Rust"
 sudo -u r3d5un curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sudo -u r3d5un sh -s -- -y
 
-log "INFO" "Setting up Starship"
-cargo install starship --locked
-sudo -u r3d5un mkdir -p /home/r3d5un/.config
-stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/.config/" starship
+# log "INFO" "Setting up Starship"
+# cargo install starship --locked
+# sudo -u r3d5un mkdir -p /home/r3d5un/.config
+# stow --verbose -d "$cwd/dotfiles" -t "/home/r3d5un/.config/" starship
 
-log "INFO" "Installing Onefetch"
-cargo install onefetch
+# log "INFO" "Installing Onefetch"
+# cargo install onefetch
 
 log "INFO" "Installing Node Version Manager"
 sudo -u r3d5un curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | sudo -u r3d5un bash
