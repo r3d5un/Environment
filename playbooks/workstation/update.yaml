@@ -64,6 +64,7 @@
         - steam-installer
         - quassel-client
         - graphviz
+        - foot
 
     - name: "Remove unwanted system packages"
       ansible.builtin.apt:
@@ -125,10 +126,10 @@
         state: present
         name:
           - ghostty
-          - nvim
           - microk8s
           - julia
           - newsflash
+          - nvim
 
     - name: "Remove unwanted snap packages"
       community.general.snap:
