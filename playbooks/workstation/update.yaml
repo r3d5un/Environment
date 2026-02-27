@@ -104,6 +104,7 @@
         - com.bitwarden.desktop
         - org.fedoraproject.MediaWriter
         - org.kde.krename
+        - com.usebruno.Bruno
 
     - name: "Remove unwanted flatpaks"
       community.general.flatpak:
