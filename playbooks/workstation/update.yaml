@@ -117,7 +117,7 @@
 
     - name: "Install wanted snap packages"
       community.general.snap:
-        classic: true
+        classic: false
         state: present
         name: []
 
@@ -131,6 +131,7 @@
           - julia
           - newsflash
           - nvim
+          - helm
 
     - name: "Remove unwanted snap packages"
       community.general.snap:
