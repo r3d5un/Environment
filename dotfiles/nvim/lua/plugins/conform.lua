@@ -8,7 +8,7 @@ return { -- Autoformat
 		},
 		formatters_by_ft = {
 			lua = { "stylua" },
-			go = { "gofmt", "golines" },
+			go = { "gofmt" },
 			python = { "isort", "black" },
 			rust = { "rustfmt" },
 			--
