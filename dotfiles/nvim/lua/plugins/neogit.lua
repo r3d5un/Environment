@@ -1,9 +1,11 @@
 return {
 	"NeogitOrg/neogit",
+	lazy = true,
 	dependencies = {
-		"nvim-lua/plenary.nvim", -- required
-		"sindrets/diffview.nvim", -- optional - Diff integration
-		"nvim-telescope/telescope.nvim", -- optional
+		"m00qek/baleia.nvim",
+		"sindrets/diffview.nvim",
+		"nvim-telescope/telescope.nvim",
 	},
+	cmd = "Neogit",
 	config = true,
 }
