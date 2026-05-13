@@ -78,6 +78,9 @@ sudo -u r3d5un curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sudo 
 # log "INFO" "Installing Onefetch"
 # cargo install onefetch
 
+# log "INFO" "Installing tree-sitter-cli"
+# cargo install --locked tree-sitter-cli
+
 log "INFO" "Installing Node Version Manager"
 sudo -u r3d5un curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | sudo -u r3d5un bash
 
