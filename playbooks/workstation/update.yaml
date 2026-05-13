@@ -65,6 +65,7 @@
         - quassel-client
         - graphviz
         - foot
+        - clang
 
     - name: "Remove unwanted system packages"
       ansible.builtin.apt:
