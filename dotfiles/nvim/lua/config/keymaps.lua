@@ -153,3 +153,11 @@ vim.api.nvim_set_keymap(
 
 -- Zen Mode
 map("n", "<leader>wz", "<cmd>ZenMode<cr>", { noremap = true, silent = true, desc = "zenmode" })
+
+-- formatting with conform
+map(
+	"n",
+	"<leader>cf",
+	":lua require('conform').format({ async = true })<CR>",
+	{ noremap = true, silent = true, desc = "[F}ormat buffer" }
+)
