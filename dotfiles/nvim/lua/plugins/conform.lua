@@ -11,6 +11,7 @@ return { -- Autoformat
 			go = { "gofmt" },
 			python = { "isort", "black" },
 			rust = { "rustfmt" },
+			markdown = { "markdownlint" },
 		},
 	},
 }
