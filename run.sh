@@ -100,3 +100,5 @@ sudo -u r3d5un mkdir -p /home/r3d5un/.local/bin/sops && \
 log "INFO" "Installing GitHub Copilot"
 sudo -u r3d5un curl -fsSL https://gh.io/copilot-install | bash
 
+log "INFO" "Installing Junie CLI"
+sudo -u r3d5un curl -fsSL https://junie.jetbrains.com/install.sh | bash
