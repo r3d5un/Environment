@@ -46,6 +46,11 @@ if [[ ! -e "$secrets_dir/public.pgp" || ! -e "$secrets_dir/private.pgp" ]]; then
 	log "ERROR" "private or public key not found in $secrets_dir"
 	exit 1
 else
+	# In order for password store to work you need to trust the key
+	# gpg --edit-key email@address.io
+	# gpg> trust
+	# quit
+
 	log "INFO" "Importing private PGP key"
 	sudo -u r3d5un gpg --import "$secrets_dir/private.pgp"
 
@@ -53,19 +58,6 @@ else
 	sudo -u r3d5un gpg --import "$secrets_dir/public.pgp"
 fi
 
-light_gray='\033[0m'
-no_color='\033[0m'
-
-echo -e "\n\nIn order for password store to work you need to trust the key\n"
-echo -e "Run: ${light_gray}gpg --edit-key email@address.io${no_color}\n"
-echo -e "Run the trust command, e.g.\n"
-echo -e "${light_gray}gpg> trust${no_color}\n"
-echo -e "Set trust level to the highest possible (5) when prompted:\n"
-echo -e "${light_gray}Your decision? 5${no_color}\n"
-echo -e "Quit and save:\n"
-echo -e "${light_gray}quit${no_color}\n\n"
-
-sudo -u r3d5un pass
 
 log "INFO" "Setting up Rust"
 sudo -u r3d5un curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sudo -u r3d5un sh -s -- -y
