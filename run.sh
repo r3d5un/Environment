@@ -49,7 +49,7 @@ else
 	# In order for password store to work you need to trust the key
 	# gpg --edit-key email@address.io
 	# gpg> trust
-	# quit
+	# gpg> quit
 
 	log "INFO" "Importing private PGP key"
 	sudo -u r3d5un gpg --import "$secrets_dir/private.pgp"
