@@ -88,5 +88,6 @@ require("lazy").setup("plugins")
 -- Configuration found under `lua/plugins/tokyonight.lua`
 vim.cmd([[colorscheme tokyonight]])
 
+require("lualine").setup({})
 require("config.keymaps")
 require("config.which-key")
