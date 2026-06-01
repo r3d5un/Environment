@@ -1,5 +1,13 @@
 return {
 	"yousefhadder/markdown-plus.nvim",
 	ft = "markdown",
-	opts = {},
+	opts = {
+		table = {
+			enabled = true,
+			auto_format = true,
+			keymaps = {
+				enabled = true,
+			},
+		},
+	},
 }
