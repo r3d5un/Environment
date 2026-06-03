@@ -7,6 +7,7 @@ return {
 			auto_format = true,
 			keymaps = {
 				enabled = true,
+				prefix = "<localleader>nt",
 			},
 		},
 	},
