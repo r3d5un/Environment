@@ -13,4 +13,5 @@ wk.add({
 	{ "<leader>w", group = "Workspace" },
 	{ "<leader>x", group = "Diagnostics" },
 	{ "<leader>b", group = "Buffers" },
+	{ "<leader>nt", group = "[T]able" },
 })
