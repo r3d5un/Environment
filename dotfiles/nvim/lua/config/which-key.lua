@@ -14,4 +14,5 @@ wk.add({
 	{ "<leader>x", group = "Diagnostics" },
 	{ "<leader>b", group = "Buffers" },
 	{ "<leader>nt", group = "[T]able" },
+	{ "<leader>m", group = "[M]arkdown" },
 })
