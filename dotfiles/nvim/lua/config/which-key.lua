@@ -15,4 +15,5 @@ wk.add({
 	{ "<leader>b", group = "Buffers" },
 	{ "<leader>nt", group = "[T]able" },
 	{ "<leader>m", group = "[M]arkdown" },
+	{ "<leader>m", group = "[M]arkdown", mode = { "n", "v" } },
 })
