@@ -5,7 +5,7 @@ wk.add({
 	{ "<leader>c", group = "Code" },
 	{ "<leader>d", group = "Document" },
 	{ "<leader>h", group = "HTTP Client" },
-	{ "<leader>n", group = "Obsidian [N]otes", mode = { "n", "v" } },
+	{ "<leader>n", group = "[N]otes", mode = { "n", "v" } },
 	{ "<leader>nf", group = "[F]ormat", mode = { "n", "v" } },
 	{ "<leader>nl", group = "Note [L]inks" },
 	{ "<leader>r", group = "Rename" },
@@ -14,6 +14,5 @@ wk.add({
 	{ "<leader>x", group = "Diagnostics" },
 	{ "<leader>b", group = "Buffers" },
 	{ "<leader>nt", group = "[T]able" },
-	{ "<leader>m", group = "[M]arkdown" },
 	{ "<leader>m", group = "[M]arkdown", mode = { "n", "v" } },
 })
