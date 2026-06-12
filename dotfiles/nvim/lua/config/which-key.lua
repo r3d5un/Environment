@@ -16,4 +16,5 @@ wk.add({
 	{ "<leader>nt", group = "[T]able" },
 	{ "<leader>m", group = "[M]arkdown", mode = { "n", "v" } },
 	{ "<leader>g", group = "[G]it" },
+	{ "<leader>g", group = "[F]ile" },
 })
