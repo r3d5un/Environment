@@ -19,4 +19,5 @@ wk.add({
 	{ "<leader>f", group = "[F]ile" },
 	{ "<leader>nt", group = "[T]ables" },
 	{ "<leader>m", group = "[M]arkdown" },
+	{ "<leader>mf", group = "[F]ootnote" },
 })
