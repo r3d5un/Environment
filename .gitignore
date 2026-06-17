@@ -6,7 +6,7 @@ dotfiles/tmux/plugins
 *.db-shm
 *.db-wal
 secrets/ansible-*
-kube/*-secret.yaml
+homelab/kubernetes/*/*-secret.yaml
 .idea
 secrets/age-key.txt
 secrets/kubectl-config.yaml
