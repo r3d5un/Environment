@@ -1,58 +1,3 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: forgejo
-  labels:
-    app: forgejo
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  namespace: forgejo
-  name: forgejo-pvc
-spec:
-  storageClassName: homelab
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 50Gi
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: forgejo-configmap
-  namespace: forgejo
-  labels:
-    app: forgejo
-data:
-  USER_UID: "1000"
-  USER_GID: "1000"
-  FORGEJO__database__DB_TYPE: "postgres"
-  FORGEJO__database__HOST: "10.0.0.9"
-  FORGEJO__database__NAME: "forgejo"
-  FORGEJO__database__USER: "forgejo"
-  FORGEJO__server__ROOT_URL: "http://10.0.0.9:31170"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: forgejo-service
-  namespace: forgejo
-spec:
-  type: NodePort
-  selector:
-    app: forgejo
-  ports:
-    - name: "http"
-      nodePort: 31170
-      port: 3000
-      targetPort: 3000
-    - name: "ssh"
-      nodePort: 31160
-      port: 22
-      targetPort: 22
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -79,16 +24,16 @@ spec:
             - secretRef:
                 name: forgejo-secrets
           ports:
-          - containerPort: 3000
-            name: http
-          - containerPort: 22
-            name: ssh
+            - containerPort: 3000
+              name: http
+            - containerPort: 22
+              name: ssh
           volumeMounts:
-          - name: forgejo-data
-            mountPath: /data
-          - name: localtime
-            mountPath: /etc/localtime
-            readOnly: true
+            - name: forgejo-data
+              mountPath: /data
+            - name: localtime
+              mountPath: /etc/localtime
+              readOnly: true
       volumes:
         - name: forgejo-data
           persistentVolumeClaim:
@@ -103,4 +48,3 @@ spec:
         requests:
           memory: "512Mi"
           cpu: "500m"
-
