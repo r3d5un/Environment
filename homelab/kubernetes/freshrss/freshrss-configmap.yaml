@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: freshrss-configmap
+  namespace: freshrss
+  labels:
+    app: freshrss
+data:
+  CRON_MIN: "5,20,35,50"
