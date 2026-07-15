@@ -20,4 +20,5 @@ wk.add({
 	{ "<leader>nt", group = "[T]ables" },
 	{ "<leader>m", group = "[M]arkdown" },
 	{ "<leader>mf", group = "[F]ootnote" },
+	{ "<leader>mQ", group = "Callouts" },
 })
