@@ -65,6 +65,8 @@
           - graphviz
           - foot
           - clang
+          - fcitx5
+          - fcitx5-mozc
 
     - name: "Remove unwanted system packages"
       ansible.builtin.apt:
