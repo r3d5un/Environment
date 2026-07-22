@@ -29,7 +29,7 @@
       ansible.builtin.get_url:
         url: "{{ mullvad_keyring_url }}"
         dest: /usr/share/keyrings/mullvad-keyring.asc
-        mode: '0644'
+        mode: "0644"
         force: no
 
     - name: Add Mullvad VPN repository
@@ -44,4 +44,3 @@
         name: mullvad-vpn
         state: present
         update_cache: yes
-
