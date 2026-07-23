@@ -1,0 +1,54 @@
+- name: Install IVPN client
+  hosts: all
+  become: yes
+  vars:
+    ivpn_key_url: "https://repo.ivpn.net/stable/ubuntu/generic.gpg"
+    ivpn_repo_url: "https://repo.ivpn.net/stable/ubuntu/generic.list"
+    ivpn_keyring_path: "/usr/share/keyrings/ivpn-archive-keyring.gpg"
+    ivpn_repo_path: "/etc/apt/sources.list.d/ivpn.list"
+
+  tasks:
+    - name: Install required packages
+      ansible.builtin.apt:
+        name:
+          - curl
+          - gnupg
+          - apt-transport-https
+        state: present
+        update_cache: yes
+
+    - name: Download and dearmor IVPN GPG key
+      ansible.builtin.shell: |
+        curl -fsSL {{ ivpn_key_url }} | gpg --dearmor > {{ ivpn_keyring_path }}
+      args:
+        creates: "{{ ivpn_keyring_path }}"
+
+    - name: Set permissions on IVPN GPG key
+      ansible.builtin.file:
+        path: "{{ ivpn_keyring_path }}"
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Download IVPN repository list
+      ansible.builtin.get_url:
+        url: "{{ ivpn_repo_url }}"
+        dest: "{{ ivpn_repo_path }}"
+        mode: "0644"
+        force: no
+
+    - name: Set permissions on IVPN repository list
+      ansible.builtin.file:
+        path: "{{ ivpn_repo_path }}"
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Update APT cache
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Install IVPN UI
+      ansible.builtin.apt:
+        name: ivpn-ui
+        state: present
