@@ -34,8 +34,8 @@ spec:
               mountPath: /config
             - name: cache
               mountPath: /cache
-            - name: media
-              mountPath: /media
+            - name: videos
+              mountPath: /media/videos
           resources:
             requests:
               memory: "512Mi"
@@ -50,7 +50,7 @@ spec:
         - name: cache
           persistentVolumeClaim:
             claimName: jellyfin-cache-pvc
-        - name: media
+        - name: videos
           persistentVolumeClaim:
             claimName: jellyfin-media-pvc
       hostAliases:
