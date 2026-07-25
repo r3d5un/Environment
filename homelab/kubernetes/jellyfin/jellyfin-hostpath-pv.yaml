@@ -27,3 +27,17 @@ spec:
   hostPath:
     path: /var/cache/jellyfin
     type: DirectoryOrCreate
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: homelab-videos-pv
+spec:
+  capacity:
+    storage: 200Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /mnt/storage/Videos
+    type: DirectoryOrCreate
