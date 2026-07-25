@@ -52,4 +52,4 @@ spec:
             claimName: jellyfin-cache-pvc
         - name: videos
           persistentVolumeClaim:
-            claimName: jellyfin-media-pvc
+            claimName: jellyfin-videos-pvc
