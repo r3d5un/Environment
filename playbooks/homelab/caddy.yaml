@@ -1,0 +1,57 @@
+- name: "Install Caddy"
+  hosts: "homelab"
+  become: true
+  become_method: "sudo"
+  tasks:
+    - name: "Installing dependencies"
+      ansible.builtin.apt:
+        state: "present"
+        update_cache: true
+        pkg:
+          - "debian-keyring"
+          - "debian-archive-keyring"
+          - "apt-transport-https"
+          - "curl"
+
+    - name: "Download and install Caddy GPG key"
+      ansible.builtin.get_url:
+        url: "https://dl.cloudsmith.io/public/caddy/stable/gpg.key"
+        dest: "/tmp/caddy-stable.gpg"
+        mode: "0644"
+
+    - name: "Dearmor and save Caddy GPG key"
+      ansible.builtin.command: >
+        gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg /tmp/caddy-stable.gpg
+      args:
+        creates: "/usr/share/keyrings/caddy-stable-archive-keyring.gpg"
+
+    - name: "Set permissions for Caddy GPG key"
+      ansible.builtin.file:
+        path: "/usr/share/keyrings/caddy-stable-archive-keyring.gpg"
+        mode: "o+r"
+
+    - name: "Add Caddy repository"
+      ansible.builtin.get_url:
+        url: "https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt"
+        dest: "/etc/apt/sources.list.d/caddy-stable.list"
+        mode: "0644"
+
+    - name: "Set permissions for Caddy repository list"
+      ansible.builtin.file:
+        path: "/etc/apt/sources.list.d/caddy-stable.list"
+        mode: "o+r"
+
+    - name: "Update APT cache"
+      ansible.builtin.apt:
+        update_cache: true
+
+    - name: "Install Caddy"
+      ansible.builtin.apt:
+        name: "caddy"
+        state: "present"
+
+    - name: "Ensure Caddy service is enabled and running"
+      ansible.builtin.systemd:
+        name: "caddy"
+        state: "started"
+        enabled: true
