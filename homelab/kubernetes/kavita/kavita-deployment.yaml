@@ -75,35 +75,35 @@ spec:
         app: kavita
     spec:
       containers:
-      - name: kavita
-        image: ghcr.io/kareadita/kavita:0.9.0.2
-        env:
-        - name: TZ
-          value: "Europe/Oslo"
-        ports:
-        - containerPort: 5000
-        volumeMounts:
-        - name: config-volume
-          mountPath: /kavita/config
-        - name: manga-volume
-          mountPath: /manga
-        - name: comics-volume
-          mountPath: /comics
-        - name: books-volume
-          mountPath: /books
+        - name: kavita
+          image: ghcr.io/kareadita/kavita:0.9.0.2
+          env:
+            - name: TZ
+              value: "Europe/Oslo"
+          ports:
+            - containerPort: 5000
+          volumeMounts:
+            - name: config-volume
+              mountPath: /kavita/config
+            - name: manga-volume
+              mountPath: /manga
+            - name: comics-volume
+              mountPath: /comics
+            - name: books-volume
+              mountPath: /books
       volumes:
-      - name: config-volume
-        persistentVolumeClaim:
-          claimName: kavita-config-pvc
-      - name: manga-volume
-        persistentVolumeClaim:
-          claimName: kavita-manga-pvc
-      - name: comics-volume
-        persistentVolumeClaim:
-          claimName: kavita-comics-pvc
-      - name: books-volume
-        persistentVolumeClaim:
-          claimName: kavita-books-pvc
+        - name: config-volume
+          persistentVolumeClaim:
+            claimName: kavita-config-pvc
+        - name: manga-volume
+          persistentVolumeClaim:
+            claimName: kavita-manga-pvc
+        - name: comics-volume
+          persistentVolumeClaim:
+            claimName: kavita-comics-pvc
+        - name: books-volume
+          persistentVolumeClaim:
+            claimName: kavita-books-pvc
       resources:
         limits:
           memory: "4Gi"
@@ -118,11 +118,10 @@ metadata:
   namespace: kavita
   name: kavita-service
 spec:
+  type: NodePort
   selector:
     app: kavita
   ports:
     - nodePort: 31190
       port: 5000
       targetPort: 5000
-  type: NodePort
-
