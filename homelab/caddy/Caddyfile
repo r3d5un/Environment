@@ -1,0 +1,43 @@
+{
+        email r3d5un@pm.me
+        auto_https off
+        log {
+                output stdout
+                format console
+        }
+}
+
+(security_headers) {
+        header {
+                X-Content-Type-Options "nosniff"
+                X-XSS-Protection "1; mode=block"
+                X-Frame-Options "SAMEORIGIN"
+                Referrer-Policy "strict-origin-when-cross-origin"
+                Permissions-Policy "geolocation=(), microphone=(), camera=()"
+        }
+}
+
+http://islandwind.me {
+        import security_headers
+        redir http://jellyfin.islandwind.me
+}
+
+http://jellyfin.islandwind.me {
+        import security_headers
+        reverse_proxy localhost:31140
+}
+
+http://forgejo.islandwind.me {
+        import security_headers
+        reverse_proxy localhost:31170
+}
+
+http://freshrss.islandwind.me {
+        import security_headers
+        reverse_proxy localhost:31180
+}
+
+http://kavita.islandwind.me {
+        import security_headers
+        reverse_proxy localhost:31190
+}
