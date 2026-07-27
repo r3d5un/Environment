@@ -1,0 +1,21 @@
+- name: "Install dnsmasq"
+  hosts: "homelab"
+  become: true
+  become_method: "sudo"
+  tasks:
+    - name: "Update APT cache"
+      ansible.builtin.apt:
+        update_cache: true
+
+    - name: "Install dsnmasq"
+      ansible.builtin.apt:
+        state: "present"
+        update_cache: true
+        pkg:
+          - "dnsmasq"
+
+    - name: "Ensure dsnmasq service is enabled and running"
+      ansible.builtin.systemd:
+        name: "caddy"
+        state: "started"
+        enabled: true
