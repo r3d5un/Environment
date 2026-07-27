@@ -28,7 +28,7 @@ spec:
               protocol: UDP
           env:
             - name: JELLYFIN_PublishedServerUrl
-              value: "http://10.0.0.9"
+              value: "http://jellyfin.islandwind.me"
           volumeMounts:
             - name: config
               mountPath: /config
