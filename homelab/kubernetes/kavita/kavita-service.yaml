@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: kavita
+  name: kavita-service
+spec:
+  type: NodePort
+  selector:
+    app: kavita
+  ports:
+    - nodePort: 31190
+      port: 5000
+      targetPort: 5000
