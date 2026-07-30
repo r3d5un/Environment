@@ -4,12 +4,13 @@ metadata:
   namespace: freshrss
   name: freshrss-data-pvc
 spec:
-  storageClassName: homelab
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 10Gi
+  storageClassName: ""
+  volumeName: freshrss-data-pv
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -17,9 +18,10 @@ metadata:
   namespace: freshrss
   name: freshrss-extensions-pvc
 spec:
-  storageClassName: homelab
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
+  storageClassName: ""
+  volumeName: freshrss-extensions-pv
