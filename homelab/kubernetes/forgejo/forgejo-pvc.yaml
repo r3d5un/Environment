@@ -4,9 +4,10 @@ metadata:
   namespace: forgejo
   name: forgejo-pvc
 spec:
-  storageClassName: homelab
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 50Gi
+      storage: 100Gi
+  storageClassName: ""
+  volumeName: forgejo-pv
