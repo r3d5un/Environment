@@ -19,7 +19,7 @@
 
 http://islandwind.me {
         import security_headers
-        redir http://jellyfin.islandwind.me
+        reverse_proxy localhost:31120
 }
 
 http://jellyfin.islandwind.me {
