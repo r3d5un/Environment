@@ -1,0 +1,73 @@
+# Homepage configuration
+# See https://fontawesome.com/search for icons options
+
+title: "Islandwind"
+subtitle: "Øyvind Kristiansen"
+logo: "logo.png"
+# icon: "fas fa-skull-crossbones" # Optional icon
+
+header: false
+footer: false
+
+# Optional theme customization
+theme: default
+
+# Optional navbar
+links: [] # Allows for navbar (dark mode, layout, and search) without any links
+
+# Optional: enable periodic refresh for all smart cards that implements it (unless overriden at service configuration level).
+updateIntervalMs: 30000 # interval in milliseconds, minimum is 1000 (1s). Remove or set to 0 to disable. Can be overriden at service level. (default disabled)
+
+# Services
+# First level array represent a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "Homelab Services"
+    icon: "fa-solid fa-house-chimney"
+    items:
+      - name: "Jellyfin"
+        icon: "fa-solid fa-play"
+        subtitle: "Media System"
+        url: "http://jellyfin.islandwind.me"
+      - name: "Forgejo"
+        icon: "fa-solid fa-code"
+        subtitle: "Software Forge"
+        url: "http://forgejo.islandwind.me"
+      - name: "FreshRSS"
+        icon: "fa-solid fa-rss"
+        subtitle: "RSS and Atom Feed Aggregator"
+        url: "http://freshrss.islandwind.me"
+      - name: "Kavita"
+        icon: "fa-solid fa-book"
+        subtitle: "A Self-Hosted Digital Library"
+        url: "http://kavita.islandwind.me"
+      - name: "Immich"
+        icon: "fa-solid fa-camera"
+        subtitle: "Photo and Video Management"
+        url: ""
+      - name: "Mealie"
+        icon: "fa-solid fa-utensils"
+        subtitle: "Recipe Manager and Meal Planner"
+        url: ""
+  - name: "Language Studies"
+    icon: "fa-solid fa-earth-europe"
+    items:
+      - name: "Pimsleur"
+        icon: "fa-solid fa-comments"
+        subtitle: "Language Courses"
+        url: "https://www.pimsleur.com"
+      - name: "WaniKani"
+        icon: "fa-solid fa-language"
+        subtitle: "Kanji and Vocabulary Course"
+        url: "https://www.wanikani.com"
+  - name: "External Services"
+    icon: "fa-solid fa-house-chimney"
+    items:
+      - name: "ProtonMail"
+        icon: "fa-solid fa-envelope"
+        subtitle: "Private E-Mail Service"
+        url: "https://proton.me/mail"
+      - name: "GitHub"
+        icon: "fa-brands fa-github"
+        subtitle: "Enterprise Code Forge"
+        url: "https://www.github.com"
