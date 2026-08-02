@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homer
+  namespace: homer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homer
+  template:
+    metadata:
+      labels:
+        app: homer
+    spec:
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+      containers:
+        - name: homer
+          image: b4bz/homer:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: homer-assets
+              mountPath: /www/assets
+      volumes:
+        - name: homer-assets
+          persistentVolumeClaim:
+            claimName: homer-pvc
+      resources:
+        limits:
+          memory: "256Mi"
+          cpu: "1"
+        requests:
+          memory: "128Mi"
+          cpu: "100m"
