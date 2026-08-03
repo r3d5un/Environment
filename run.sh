@@ -36,6 +36,7 @@ sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install github.com/air-vers
 sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install github.com/swaggo/swag/cmd/swag@latest
 sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install golang.org/x/tools/go/analysis/passes/fieldalignment/cmd/fieldalignment@latest
 sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install github.com/golangci/golines@latest
 
 log "INFO" "Setting up NVM"
 sudo -u r3d5un curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | sudo -u r3d5un bash
