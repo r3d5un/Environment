@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calibre
+  namespace: calibre
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calibre
+  template:
+    metadata:
+      labels:
+        app: calibre
+    spec:
+      containers:
+        - name: calibre
+          image: linuxserver/calibre-web:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8083
+          env:
+            - name: TZ
+              value: Etc/UTC
+          volumeMounts:
+            - name: calibre-books
+              mountPath: /books
+            - name: calibre-config
+              mountPath: /config
+      volumes:
+        - name: calibre-books
+          persistentVolumeClaim:
+            claimName: calibre-books-pvc
+        - name: calibre-config
+          persistentVolumeClaim:
+            claimName: calibre-config-pvc
+      resources:
+        limits:
+          memory: "2Gi"
+          cpu: "2"
+        requests:
+          memory: "512Mi"
+          cpu: "100m"
