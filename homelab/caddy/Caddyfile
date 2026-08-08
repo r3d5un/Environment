@@ -37,7 +37,7 @@ http://freshrss.islandwind.me {
         reverse_proxy localhost:31180
 }
 
-http://kavita.islandwind.me {
+http://calibre.islandwind.me {
         import security_headers
         reverse_proxy localhost:31190
 }
