@@ -38,6 +38,8 @@ sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install golang.org/x/tools/
 sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 sudo -u r3d5un env PATH="/usr/local/go/bin:$PATH" go install github.com/golangci/golines@latest
 
+sudo -u r3d5un curl -sSfL https://golangci-lint.run/install.sh | sh -s -- -b $(go env GOPATH)/bin v2.12.2
+
 log "INFO" "Setting up NVM"
 sudo -u r3d5un curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | sudo -u r3d5un bash
 
