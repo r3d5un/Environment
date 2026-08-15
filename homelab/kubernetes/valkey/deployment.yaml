@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: mssql
+  name: mssql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mssql
+  template:
+    metadata:
+      labels:
+        app: mssql
+    spec:
+      containers:
+        - name: mssql
+          image: valkey/valkey:alpine3.24
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 6379
+          env:
+            - name: RI_APP_PORT
+              value: 5540
+            - name: RI_APP_HOST
+              value: 0.0.0.0
+            - name: RI_LOG_LEVEL
+              value: info
+            - name: RI_REDIS_HOST
+              value: valkey
+          volumeMounts:
+            - name: valkey-pvc
+              mountPath: ./valkey/data
+          # TODO: Add PVC for configuration files
+      volumes:
+        - name: mssql-data
+          persistentVolumeClaim:
+            claimName: mssql-pvc
+      resources:
+        requests:
+          memory: "256Mi"
+          cpu: 1
+        limits:
+          memory: "1Gi"
+          cpu: 2
