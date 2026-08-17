@@ -31,7 +31,6 @@
           - eza
           - bat
           - foliate
-          - lutris
           - filezilla
           - kamoso
           - remmina
@@ -75,6 +74,7 @@
           - akregator
           - kontact
           - entr
+          - lutris
 
     - name: "Remove dependencies that are no longer required"
       ansible.builtin.apt:
