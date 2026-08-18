@@ -12,57 +12,61 @@
       ansible.builtin.apt:
         state: present
         pkg:
+          # Media
+          - mpv
+          - foliate
+          - steam-installer
+          - quassel-client
+          # Tools
+          - gnupg2
+          - graphviz
+          - zoxide
+          - nextcloud-desktop
+          - kamoso
+          - remmina
+          - mangohud
+          - openvpn
+          - kaddressbook
+          - alloy
+          - snapd
+          - fd-find
+          - ca-certificates
+          - curl
+          - fzf
+          - eza
+          - bat
+          - pass
+          - age
+          - restic
+          - filezilla
           - btop
           - make
           - git
-          - gcc
+          - foot
           - htop
-          - mpv
           - pavucontrol
           - ripgrep
           - wine
           - winetricks
-          - s3fs
-          - s3cmd
-          - keepassxc
-          - nextcloud-desktop
-          - zoxide
-          - fzf
-          - eza
-          - bat
-          - foliate
-          - filezilla
-          - kamoso
-          - remmina
-          - fd-find
-          - ca-certificates
-          - curl
+          - bash-completion
           - ansible
           - unzip
           - stow
-          - libtree-sitter-dev
-          - restic
-          - snapd
-          - alloy
-          - bash-completion
-          - luarocks
+          - s3fs
+          - s3cmd
+          - keepassxc
+          # Development dependencies and libraries
+          - clang
           - python3-pip
           - python3-venv
           - openjdk-25-jdk-headless
           - ruby
           - php8.3-cli
           - composer
-          - mangohud
-          - openvpn
-          - kaddressbook
-          - age
-          - gnupg2
-          - pass
-          - steam-installer
-          - quassel-client
-          - graphviz
-          - foot
-          - clang
+          - luarocks
+          - gcc
+          - libtree-sitter-dev
+          # Japanese kana input dependencies
           - fcitx5
           - fcitx5-mozc
 
