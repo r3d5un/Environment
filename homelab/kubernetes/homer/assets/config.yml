@@ -48,7 +48,7 @@ services:
       - name: "Mealie"
         icon: "fa-solid fa-utensils"
         subtitle: "Recipe Manager and Meal Planner"
-        url: ""
+        url: "https://mealie.islandwind.me"
   - name: "Language Studies"
     icon: "fa-solid fa-earth-europe"
     items:
