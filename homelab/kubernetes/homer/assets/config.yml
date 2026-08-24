@@ -44,7 +44,7 @@ services:
       - name: "Immich"
         icon: "fa-solid fa-camera"
         subtitle: "Photo and Video Management"
-        url: ""
+        url: "https://immich.islandwind.me"
       - name: "Mealie"
         icon: "fa-solid fa-utensils"
         subtitle: "Recipe Manager and Meal Planner"
