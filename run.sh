@@ -16,7 +16,6 @@ ansible-playbook -i hosts.yaml playbooks/homelab/docker-install.yaml --limit loc
 ansible-playbook -i hosts.yaml playbooks/workstation/install-go.yaml --limit localhost --become
 ansible-playbook -i hosts.yaml playbooks/workstation/iosevka-font.yaml --limit localhost --become
 ansible-playbook -i hosts.yaml playbooks/workstation/install-mullvad.yaml --limit localhost --become
-ansible-playbook -i hosts.yaml playbooks/workstation/install-ivpn.yaml --limit localhost --become
 ansible-playbook -i hosts.yaml playbooks/workstation/install-kubectl.yaml --limit localhost --become
 
 log "INFO" "Stowing configurations"
