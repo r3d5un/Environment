@@ -72,6 +72,6 @@ services:
         subtitle: "Enterprise Code Forge"
         url: "https://www.github.com"
       - name: "Azure"
-        icon: "fa-brands fa-azure"
+        icon: "fa-brands fa-microsoft"
         subtitle: "Microsoft Azure Cloud Services"
         url: "https://portal.azure.com"
